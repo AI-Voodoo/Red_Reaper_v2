@@ -39,6 +39,10 @@ class LoadData:
             email_senders, email_recipients = self.recover_email(email_content)
             entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
 
+            law_entities, money_entities = self.spacy_work.process_law_money_entities(entities)
+            if not law_entities or money_entities:
+                continue
+
             email_data = {
                 "email_meta_data": row[0],  # The metadata (first column)
                 "raw_content": email_content, 
