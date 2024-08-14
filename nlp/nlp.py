@@ -20,7 +20,7 @@ class SpacyNLP:
                 entities[ent.label_].append(ent.text)  
         return entities
     
-    def process_law_money_entities(entity_dict: dict) -> tuple:
+    def process_law_money_entities(self, entity_dict) -> tuple:
         law_entities = entity_dict.get("LAW", [])
         money_entities = entity_dict.get("MONEY", [])
         return law_entities, money_entities

@@ -1,4 +1,5 @@
 import logging
+import os
 import re
 import pandas as pd
 
@@ -9,6 +10,15 @@ class LoadData:
         self.spacy_work = SpacyNLP()
         self.target_entity_list = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE", "MONEY"]
 
+    def delete_file(self, file_path) -> None:
+        # Check if the file exists
+        if os.path.exists(file_path):
+            # Delete the file
+            os.remove(file_path)
+            print(f"The file {file_path} has been deleted successfully.")
+        else:
+            print(f"The file {file_path} does not exist.")
+
     def recover_email(self, raw_text) -> tuple:
         # Correcting regex patterns
         from_pattern = r"From: ([\w\.-]+@[\w\.-]+)"
@@ -18,6 +28,8 @@ class LoadData:
         return email_senders, email_recipients 
     
     def clean_email_content(self, content: str) -> str:
+        if "cc: " in content:
+            return content.split("cc: ", 1)[-1]
         if "X-FileName:" in content:
             return content.split("X-FileName:", 1)[-1]
         return content
@@ -35,6 +47,7 @@ class LoadData:
         df = self.load_csv_to_df(csv_path) 
         emails = []
         for index, row in df.iterrows():
+            print(f"Analyzing email from: {row[0]}")
             email_content = row[1]  # This is the email content
             email_senders, email_recipients = self.recover_email(email_content)
             entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
@@ -42,7 +55,7 @@ class LoadData:
             law_entities, money_entities = self.spacy_work.process_law_money_entities(entities)
             if not law_entities or money_entities:
                 continue
-
+            
             email_data = {
                 "email_meta_data": row[0],  # The metadata (first column)
                 "raw_content": email_content, 
@@ -54,6 +67,7 @@ class LoadData:
             # Merge the entities dictionary into the email_data dictionary
             email_data.update(entities)
             emails.append(email_data)
+            logging.info(email_data)
             print("")
         
         return emails
