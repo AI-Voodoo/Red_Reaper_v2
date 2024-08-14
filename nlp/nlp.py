@@ -25,3 +25,11 @@ class SpacyNLP:
         law_entities = entity_dict.get("LAW", [])
         money_entities = entity_dict.get("MONEY", [])
         return law_entities, money_entities
+    
+    def extract_sentences_with_entities(self, text, law_entities, money_entities) -> tuple:
+        law_sentences = []
+        money_sentences = []
+        doc = self.nlp(text)
+        law_sentences = [sentence.text for sentence in doc.sents if any(law_entity in sentence.text for law_entity in law_entities)]
+        money_sentences = [sentence.text for sentence in doc.sents if any(money_entity in sentence.text for money_entity in money_entities)]
+        return " ".join(list(set(law_sentences))), " ".join(list(set(money_sentences)))

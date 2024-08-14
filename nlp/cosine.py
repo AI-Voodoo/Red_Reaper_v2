@@ -1,7 +1,7 @@
 import logging
 from sklearn.metrics.pairwise import cosine_similarity
 
-class CosineSimilarity:
+class Cosine:
     def __init__(self) -> None:
         pass
     
