@@ -8,5 +8,7 @@ class LlmAssesText:
 
     def llm_assess_value(self, email) -> bool:
         prompt = self.adversary_prompts.prompt_evaluate_is_espionage_grade(email)
-        value_bool = self.post_to_llm.send_post_to_llm(prompt)
-        return value_bool
+        value_bool_raw = self.post_to_llm.send_post_to_llm(prompt)
+        if "yes" in str(value_bool_raw).lower():
+            return True
+        return False

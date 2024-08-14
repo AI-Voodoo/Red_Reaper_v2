@@ -30,10 +30,10 @@ class LoadData:
         return email_senders, email_recipients 
     
     def clean_email_content(self, content: str) -> str:
-        if "cc: " in content:
-            return content.split("cc: ", 1)[-1]
         if "X-FileName:" in content:
             return content.split("X-FileName:", 1)[-1]
+        elif "cc: " in content:
+            return content.split("cc: ", 1)[-1]
         return content
     
     def load_csv_to_df(self, csv_path) -> pd.DataFrame:
@@ -48,7 +48,7 @@ class LoadData:
     def load_process_csv_data(self, csv_path) -> list:
         df = self.load_csv_to_df(csv_path) 
         emails = []
-        for index, row in df.iterrows():
+        for _, row in df.iterrows():
             print(f"Analyzing email from: {row[0]}")
             email_content = row[1]  # This is the email content
             clean_email_content = self.clean_email_content(email_content)
@@ -57,13 +57,14 @@ class LoadData:
 
             law_entities, money_entities = self.spacy_work.process_law_money_entities(entities)
             value_bool = self.assess_emails.llm_assess_value(clean_email_content)
-            if not value_bool or not law_entities or not money_entities:
+            if not (value_bool or len(law_entities) >= 1 or len(money_entities) >=1 ):
+                print("Skipping...")
                 continue
             
             print("BOOM! Found some.")
             email_data = {
                 "email_meta_data": row[0],  # The metadata (first column)
-                "raw_content": email_content, 
+                #"raw_content": email_content, 
                 "clean_content": clean_email_content, 
                 "senders": email_senders,
                 "recipients": email_recipients
