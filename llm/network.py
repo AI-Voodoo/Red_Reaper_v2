@@ -1,3 +1,4 @@
+import logging
 import requests
 
 class network_connections():

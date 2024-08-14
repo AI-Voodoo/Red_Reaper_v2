@@ -1,3 +1,4 @@
+import logging
 import onnxruntime_genai as og
 from flask import Flask, request, jsonify
 
