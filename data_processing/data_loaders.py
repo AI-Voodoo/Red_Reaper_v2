@@ -1,3 +1,4 @@
+import json
 import logging
 import os
 import re
@@ -20,6 +21,10 @@ class LoadData:
         self.law_target = self.target_prompts.collection_goals_legal()
         self.money_target = self.target_prompts.collection_goals_money()
         self.exlclusion_target = self.target_prompts.exlclusion_goals()
+
+    def save_data_to_json(data, path) -> None:
+        with open(path, 'w') as json_file:
+            json.dump(data, json_file, indent=4)
 
     def delete_file(self, file_path) -> None:
         # Check if the file exists
@@ -58,7 +63,7 @@ class LoadData:
         df.iloc[:, 1] = df.iloc[:, 1].str.replace(r'\s+', ' ', regex=True)
         return df
 
-    def load_process_csv_data(self, csv_path) -> list:
+    def load_process_email_data(self, csv_path) -> list:
         df = self.load_csv_to_df(csv_path) 
         emails = []
         for _, row in df.iterrows():
@@ -101,7 +106,8 @@ class LoadData:
             # Merge the entities dictionary into the email_data dictionary
             email_data.update(entities)
             emails.append(email_data)
-            logging.info(email_data)
-            print("")
+            
+            stage_1_json_path = "data/stage_1/high_value_emails.json"
+            self.save_data_to_json(emails, stage_1_json_path)
         
         return emails
