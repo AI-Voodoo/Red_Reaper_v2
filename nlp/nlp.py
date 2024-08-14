@@ -1,5 +1,5 @@
+import logging
 import spacy
-
 
 class SpacyNLP:
     _instance = None

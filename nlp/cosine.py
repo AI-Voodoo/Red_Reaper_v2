@@ -1,3 +1,4 @@
+import logging
 from sklearn.metrics.pairwise import cosine_similarity
 
 class CosineSimilarity:

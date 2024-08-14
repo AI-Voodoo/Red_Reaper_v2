@@ -1,3 +1,4 @@
+import logging
 import torch
 from sentence_transformers import SentenceTransformer
 
@@ -14,5 +15,7 @@ class EmbeddingModel:
         pass
 
     def generate_embeddings(self, prompt) -> list: 
-        embeddings = self.sentence_model.encode(prompt)    
-        return embeddings
+        if prompt:
+            return self.sentence_model.encode(prompt)    
+        return None
+  

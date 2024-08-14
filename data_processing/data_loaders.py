@@ -1,3 +1,4 @@
+import logging
 import re
 import pandas as pd
 
@@ -15,26 +16,33 @@ class LoadData:
         email_senders = re.findall(from_pattern, raw_text)
         email_recipients = re.findall(to_pattern, raw_text)
         return email_senders, email_recipients 
-
-    def load_process_csv(self, csv_path, clean=False) -> list:
+    
+    def clean_email_content(self, content: str) -> str:
+        if "X-FileName:" in content:
+            return content.split("X-FileName:", 1)[-1]
+        return content
+    
+    def load_csv_to_df(self, csv_path) -> pd.DataFrame:
         df = pd.read_csv(csv_path, header=None, encoding='utf-8')
         if df.shape[1] < 2:
-            raise ValueError("CSV file must contain two columns.")
+            raise ValueError("CSV file must contain at least two columns.")  
+        # Replace newlines and excessive whitespace in the email content column (assumed to be the second column)
         df.iloc[:, 1] = df.iloc[:, 1].str.replace('\n', ' ')
-        
-        # Strip everything before the first occurrence of "X-FileName:"
-        if clean:
-            df.iloc[:, 1] = df.iloc[:, 1].apply(lambda x: x.split("X-FileName:", 1)[-1] if "X-FileName:" in x else x)  
-        # Replace excessive whitespace
-        data = df.iloc[:, 1].str.replace(r'\s+', ' ', regex=True)
+        df.iloc[:, 1] = df.iloc[:, 1].str.replace(r'\s+', ' ', regex=True)
+        return df
+
+    def load_process_csv_data(self, csv_path) -> list:
+        df = self.load_csv_to_df(csv_path) 
         emails = []
-        for index, row in enumerate(data):
-            email_senders, email_recipients = self.recover_email(row)
-            entities = self.spacy_work.get_entities_by_type(row, self.target_entity_list )
+        for index, row in df.iterrows():
+            email_content = row[1]  # This is the email content
+            email_senders, email_recipients = self.recover_email(email_content)
+            entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
 
             email_data = {
-                "email_meta_data": df.iloc[index, 0],
-                "content": row,
+                "email_meta_data": row[0],  # The metadata (first column)
+                "raw_content": email_content, 
+                "clean_content": self.clean_email_content(email_content), 
                 "senders": email_senders,
                 "recipients": email_recipients
             }
@@ -42,6 +50,6 @@ class LoadData:
             # Merge the entities dictionary into the email_data dictionary
             email_data.update(entities)
             emails.append(email_data)
-
-
+            print("")
+        
         return emails
