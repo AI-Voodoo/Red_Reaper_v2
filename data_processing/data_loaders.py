@@ -22,7 +22,7 @@ class LoadData:
         self.money_target = self.target_prompts.collection_goals_money()
         self.exlclusion_target = self.target_prompts.exlclusion_goals()
 
-    def save_data_to_json(data, path) -> None:
+    def save_data_to_json(self, data, path) -> None:
         with open(path, 'w') as json_file:
             json.dump(data, json_file, indent=4)
 
@@ -92,7 +92,7 @@ class LoadData:
                 continue
 
             email_data = {
-                "email_meta_data": row[0],  # The metadata (first column)
+                "email_meta_data": row[0],
                 "clean_content": clean_email_content,
                 "senders": email_senders,
                 "recipients": email_recipients,
