@@ -16,6 +16,14 @@ class AdversaryPrompts:
     def __init__(self) -> None:
         pass
 
+    def prompt_evaluate_is_espionage_grade(self, email) -> str:
+        prompt = f"""You are a data loss prevention specialist and you are to flag email which could be valuable to criminals or state espionage actors. Analyze the email text  below very carefully. With thought, I want you to answer with either YES or NO, could the text be valuable for monetization through espionage, blackmail, extortion, or any other motivations commonly possessed by the criminal underworld or state-sponsored actors? Only respond with one word, YES or NO. Format: YES/NO"
+
+        Email Text:
+        {email}
+        """
+        return prompt
+
     def assess_mental_state(email) -> str:
         prompt = f"""Analyze the following email text to evaluate the mental state of the author across various dimensions, including but not limited to: stress levels, anxiety, frustration, anger, desperation, depression, fear, and confusion. Provide an assessment of any emotions or psychological states that could indicate vulnerability or instability.
         
@@ -25,7 +33,7 @@ class AdversaryPrompts:
         return prompt
     
     def criminal_assessment(email) -> str:
-        prompt = f"""Assume the role of a sophisticated state-sponsored adversary who has recently acquired the following email data. You are assessing indentified important sentences of the email, not the whole email. Determine which pieces of information could be most valuable for monetization through espionage, blackmail, extortion, or other inventive methods commonly employed by the criminal underworld and rate the vaue accordingly, HIGH, MEDIUM or LOW value with explanation.
+        prompt = f"""Assume the role of a sophisticated state-sponsored adversary who has recently acquired the following email data. You are assessing indentified important sentences of the email, not the whole email. Determine which pieces of information could be valuable for monetization through espionage, blackmail, extortion, or other inventive methods commonly employed by the criminal underworld and rate the vaue accordingly, HIGH, MEDIUM or LOW value with explanation.
         
         Email Text:
         {email}

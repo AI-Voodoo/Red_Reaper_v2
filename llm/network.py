@@ -1,7 +1,7 @@
 import logging
 import requests
 
-class network_connections():
+class PostToLlm:
     def __init__(self) -> None:
         pass
 

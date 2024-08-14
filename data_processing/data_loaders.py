@@ -4,11 +4,13 @@ import re
 import pandas as pd
 
 from nlp.nlp import SpacyNLP
+from nlp.llm_inference import LlmAssesText
 
 class LoadData:
     def __init__(self) -> None:
         self.spacy_work = SpacyNLP()
         self.target_entity_list = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE", "MONEY"]
+        self.assess_emails = LlmAssesText()
 
     def delete_file(self, file_path) -> None:
         # Check if the file exists
@@ -49,17 +51,19 @@ class LoadData:
         for index, row in df.iterrows():
             print(f"Analyzing email from: {row[0]}")
             email_content = row[1]  # This is the email content
+            clean_email_content = self.clean_email_content(email_content)
             email_senders, email_recipients = self.recover_email(email_content)
             entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
 
-            law_entities, money_entities = self.spacy_work.process_law_money_entities(entities)
-            if not law_entities or money_entities:
+            law_entities, money_entities = elf.spacy_work.process_law_money_entities(entities)
+            value_bool = self.assess_emails.llm_assess_value(clean_email_content)
+            if not value_bool or not law_entities or not money_entities:
                 continue
             
             email_data = {
                 "email_meta_data": row[0],  # The metadata (first column)
                 "raw_content": email_content, 
-                "clean_content": self.clean_email_content(email_content), 
+                "clean_content": clean_email_content, 
                 "senders": email_senders,
                 "recipients": email_recipients
             }

@@ -1,7 +1,7 @@
 from data_processing.data_loaders import LoadData
 load_data = LoadData()
 
-load_data.delete_file("data/logs/triplet_extraction.log")
+load_data.delete_file("data/logs/general_log.log")
 import logging
 
 
