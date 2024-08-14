@@ -96,9 +96,9 @@ class LoadData:
                 "clean_content": clean_email_content,
                 "senders": email_senders,
                 "recipients": email_recipients,
-                "law_score": law_score if law_score is not None else "No Law Content Found",
-                "money_score": money_score if money_score is not None else "No Money Content Found",
-                "known_low_value_score": exclusion_score,
+                "law_score": float(law_score) if law_score is not None else "No Law Content Found",
+                "money_score": float(money_score) if money_score is not None else "No Money Content Found",
+                "known_low_value_score": float(exclusion_score),
                 "focused_law_content": law_sentences if law_sentences else "No Law Content",
                 "focused_money_content": money_sentences if money_sentences else "No Money Content"
             }
