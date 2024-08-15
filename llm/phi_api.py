@@ -8,7 +8,7 @@ class Args:
     def __init__(self) -> None:
         self.model = "cuda/cuda-int4-rtn-block-32"
         self.do_sample = True
-        self.max_length = 2048
+        self.max_length = 4096
         self.min_length = None
         self.top_p = None
         self.top_k = None

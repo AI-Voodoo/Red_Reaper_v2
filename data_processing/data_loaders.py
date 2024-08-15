@@ -12,6 +12,7 @@ from nlp.embeddings import EmbeddingModel
 class LoadData:
     def __init__(self) -> None:
         self.target_entity_list = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE", "MONEY"]
+        self.excluded_keywords = ["wall street", "bloomberg", "new york times", "dow jones", "djia", "nasdaq", "trading", "invest", "tickets", "hotel", "baseball", "unsubscribe", "seminar", "yahoo"]
 
         self.spacy_work = SpacyNLP()
         self.assess_emails = LlmAssesText()
@@ -71,6 +72,8 @@ class LoadData:
 
             email_content = row[1]
             clean_email_content = self.clean_email_content(email_content)
+            if any(keyword in clean_email_content.lower() for keyword in self.excluded_keywords):
+                continue
             email_senders, email_recipients = self.recover_email(email_content)
             if not len(email_recipients) >= 1:
                 continue
@@ -87,10 +90,9 @@ class LoadData:
                 law_score = self.embedding_work.compare_text_for_similarity(self.law_target, law_sentences)
             if money_sentences:
                 money_score = self.embedding_work.compare_text_for_similarity(self.money_target, money_sentences)
-            exclusion_score = self.embedding_work.compare_text_for_similarity(self.exlclusion_target, clean_email_content)
             if law_score <= 0.29 and money_score <= 0.29:
                 continue
-
+            llm_value = self.assess_emails.llm_assess_value(clean_email_content)
             email_data = {
                 "email_meta_data": row[0],
                 "clean_content": clean_email_content,
@@ -98,7 +100,7 @@ class LoadData:
                 "recipients": email_recipients,
                 "law_score": float(law_score) if law_score is not None else "No Law Content Found",
                 "money_score": float(money_score) if money_score is not None else "No Money Content Found",
-                "known_low_value_score": float(exclusion_score),
+                "llm_value": llm_value,
                 "focused_law_content": law_sentences if law_sentences else "No Law Content",
                 "focused_money_content": money_sentences if money_sentences else "No Money Content"
             }

@@ -37,8 +37,25 @@ class AdversaryPrompts:
         return prompt
     
     def criminal_assessment(self, email) -> str:
-        prompt = f"""Assume the role of a sophisticated state-sponsored adversary who has recently acquired the following email data. You are assessing indentified important sentences of the email, not the whole email. Determine which pieces of information could be valuable for monetization through espionage, blackmail, extortion, or other inventive methods commonly employed by the criminal underworld and rate the vaue accordingly, HIGH, MEDIUM or LOW value with explanation.
+        prompt = f"""Assume the role of a sophisticated state-sponsored adversary who has recently acquired the following email data. You will scrutinize and assess the email text below using the following criteria to rate its value for criminal purposes. 
+
+        Use the following criteria:
+        -HIGH: The email directly speaks about intellectual property (IP), imminent corporate transactions like wire transfers exceeding 10,000 dollars, refrences to bank accounts or credit cards, trade secrets, or significant legal issues like fruad or active litigation that could be exploited for espionage, blackmail, extortion, insider trading, or similar high-impact criminal activities.
+        -MEDIUM: The email contains sensitive information, finacial transactions less than 10,000 dollars, day-to-day business operations information. It may be valuable but not directly actionable.
+        -LOW: The email contains minimal or no exploitable information and is unlikely to provide any value for criminal purposes.
+
+        Based on these criteria, rate the email with only one value: HIGH, MEDIUM, or LOW. Do not add any extra explanations and only choose one value.
+
+        Email Text:
+        {email}
+        """
+        return prompt
+
+    
+    def criminal_assessment_B(self, email) -> str:
+        prompt = f"""Assume the role of a sophisticated state-sponsored adversary who has recently acquired the following email data. You will assess the email text below to rate its value to you for criminal purposes. Determine if the email could be valuable for monetization through espionage, blackmail, extortion, insider trading or other inventive methods commonly employed by the criminal underworld or state-sponsored actors and rate the email with only one value: HIGH, MEDIUM or LOW. Do not add any extra explanations and only choose one value.
         
         Email Text:
         {email}
         """
+        return prompt

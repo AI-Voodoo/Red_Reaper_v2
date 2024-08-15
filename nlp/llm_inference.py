@@ -6,9 +6,13 @@ class LlmAssesText:
         self.post_to_llm = PostToLlm()
         self.adversary_prompts = AdversaryPrompts()
 
-    def llm_assess_value(self, email) -> bool:
-        prompt = self.adversary_prompts.prompt_evaluate_is_espionage_grade(email)
+    def llm_assess_value(self, email) -> int:
+        prompt = self.adversary_prompts.criminal_assessment(email)
         value_bool_raw = self.post_to_llm.send_post_to_llm(prompt)
-        if "yes" in str(value_bool_raw).lower():
-            return True
-        return False
+        if "high" in str(value_bool_raw).lower():
+            return 3
+        if "medium" in str(value_bool_raw).lower():
+            return 2
+        if "low" in str(value_bool_raw).lower():
+            return 1
+        return 0
