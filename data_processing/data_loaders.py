@@ -92,7 +92,7 @@ class LoadData:
                 money_score = self.embedding_work.compare_text_for_similarity(self.money_target, money_sentences)
             if law_score <= 0.29 and money_score <= 0.29:
                 continue
-            llm_value = self.assess_emails.llm_assess_value(clean_email_content)
+            combined_score = law_score + money_score
             email_data = {
                 "email_meta_data": row[0],
                 "clean_content": clean_email_content,
@@ -100,7 +100,7 @@ class LoadData:
                 "recipients": email_recipients,
                 "law_score": float(law_score) if law_score is not None else "No Law Content Found",
                 "money_score": float(money_score) if money_score is not None else "No Money Content Found",
-                "llm_value": llm_value,
+                "combined_score": float(combined_score),
                 "focused_law_content": law_sentences if law_sentences else "No Law Content",
                 "focused_money_content": money_sentences if money_sentences else "No Money Content"
             }
