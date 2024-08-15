@@ -30,6 +30,9 @@ class GeneralFileOperations:
         else:
             print(f"The file {file_path} does not exist.")
 
+    def file_exists(self, file_path) -> bool:
+        return os.path.isfile(file_path)
+
 
 
 class LoadEmailData:
@@ -55,15 +58,40 @@ class LoadEmailData:
         df.iloc[:, 1] = df.iloc[:, 1].str.replace('\n', ' ')
         df.iloc[:, 1] = df.iloc[:, 1].str.replace(r'\s+', ' ', regex=True)
         return df
+    
+    def prune_df(self, last_email_meta_data, df_og) -> pd.DataFrame:
+        matching_index = None
+        for idx, row in df_og.iterrows():
+            if row[0] == last_email_meta_data:
+                matching_index = idx
+                break
+        if matching_index is not None:
+            df = df_og.iloc[matching_index + 1:]
+            return df
+        return df_og
 
     def load_process_email_data(self, csv_path) -> list:
+        stage_1_json_path = "data/stage_1/high_value_emails.json"
+
+        file_continue = self.file_ops.file_exists(stage_1_json_path)
+        if file_continue:
+            emails = self.file_ops.load_json(stage_1_json_path)
+            if emails:
+                last_email_meta_data = emails[-1]['email_meta_data']
+        else:
+            emails = []
+
         df = self.load_csv_to_df(csv_path) 
-        emails = []
+        if file_continue:
+            df = self.prune_df(last_email_meta_data, df)
+            
         for _, row in df.iterrows():
             print(f"Analyzing email from: {row[0]}")
-
             email_content = row[1]
+
             clean_email_content = self.proc_data.clean_email_content(email_content)
+            if len(clean_email_content) >= 1000000:
+                continue
             if any(keyword in clean_email_content.lower() for keyword in self.excluded_keywords):
                 continue
             email_senders, email_recipients = self.proc_data.recover_email(email_content)
@@ -100,8 +128,6 @@ class LoadEmailData:
             # Merge the entities dictionary into the email_data dictionary
             email_data.update(entities)
             emails.append(email_data)
-            
-            stage_1_json_path = "data/stage_1/high_value_emails.json"
             self.file_ops.save_data_to_json(emails, stage_1_json_path)
         
         return emails

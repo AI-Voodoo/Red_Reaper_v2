@@ -18,10 +18,7 @@ emails = load_data.load_process_email_data(enron_email_path)
 
 # stage 2:
 """
-load = LoadData()
-
-
-emails = load.file_ops("data/stage_1/high_value_emails.json")
+emails = file_ops.load_json("data/stage_1/high_value_emails.json")
 discarded_data = []
 good_data = []
 for email in emails:
