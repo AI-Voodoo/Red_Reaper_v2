@@ -1,60 +1,52 @@
 import json
 import logging
 import os
-import re
 import pandas as pd
 
 from nlp.nlp import SpacyNLP
 from nlp.llm_inference import LlmAssesText
 from nlp.prompts import TargetStrings
 from nlp.embeddings import EmbeddingModel
+from data_processing.pre_process import DataPreProcess
 
-class LoadData:
+
+class GeneralFileOperations:
     def __init__(self) -> None:
-        self.target_entity_list = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE", "MONEY"]
-        self.excluded_keywords = ["wall street", "bloomberg", "new york times", "dow jones", "djia", "nasdaq", "trading", "invest", "tickets", "hotel", "baseball", "unsubscribe", "seminar", "yahoo"]
-
-        self.spacy_work = SpacyNLP()
-        self.assess_emails = LlmAssesText()
-        self.target_prompts = TargetStrings()
-        self.embedding_work = EmbeddingModel()
-
-        self.law_target = self.target_prompts.collection_goals_legal()
-        self.money_target = self.target_prompts.collection_goals_money()
-        self.exlclusion_target = self.target_prompts.exlclusion_goals()
+        pass
 
     def save_data_to_json(self, data, path) -> None:
         with open(path, 'w') as json_file:
             json.dump(data, json_file, indent=4)
 
+    def load_json(self, json_file_path) -> json:
+        with open(json_file_path, 'r') as file:
+            data = json.load(file)
+            return data
+
     def delete_file(self, file_path) -> None:
-        # Check if the file exists
         if os.path.exists(file_path):
-            # Delete the file
             os.remove(file_path)
             print(f"The file {file_path} has been deleted successfully.")
         else:
             print(f"The file {file_path} does not exist.")
 
-    def recover_email(self, raw_text) -> tuple:
-        # Correcting regex patterns
-        from_pattern = r"From: ([\w\.-]+@[\w\.-]+)"
-        to_pattern = r"To: ([\w\.-]+@[\w\.-]+)"
-        email_senders = re.findall(from_pattern, raw_text)
-        email_recipients = re.findall(to_pattern, raw_text)
-        return list(set(email_senders)), list(set(email_recipients)) 
-    
-    def clean_email_content(self, content: str) -> str:
-        if "X-FileName:" in content:
-            clean_content = content.split("X-FileName:", 1)[-1]
-            clean_content = clean_content.replace("=01,", "'")
-            clean_content = clean_content.replace("=20", "")
-            clean_content = clean_content.replace("= ", "")
-            clean_content = clean_content.replace("=09", "")
-            clean_content = re.sub(r'\s+', ' ', clean_content)
-            return clean_content
-        return content
-        
+
+
+class LoadEmailData:
+    def __init__(self) -> None:
+        self.target_entity_list = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", "WORK_OF_ART", "LAW", "LANGUAGE", "MONEY"]
+        self.excluded_keywords = ["wall street", "bloomberg", "new york times", "dow jones", "djia", "nasdaq", "trading", "invest", "tickets", "hotel", "baseball", "unsubscribe", "seminar", "yahoo"]
+
+        self.file_ops = GeneralFileOperations()
+        self.proc_data = DataPreProcess()
+        self.spacy_work = SpacyNLP()
+        self.target_prompts = TargetStrings()
+        self.embedding_work = EmbeddingModel()
+
+        self.law_target = self.target_prompts.collection_goals_legal()
+        self.money_target = self.target_prompts.collection_goals_money()
+
+       
     def load_csv_to_df(self, csv_path) -> pd.DataFrame:
         df = pd.read_csv(csv_path, header=None, encoding='utf-8')
         if df.shape[1] < 2:
@@ -71,10 +63,10 @@ class LoadData:
             print(f"Analyzing email from: {row[0]}")
 
             email_content = row[1]
-            clean_email_content = self.clean_email_content(email_content)
+            clean_email_content = self.proc_data.clean_email_content(email_content)
             if any(keyword in clean_email_content.lower() for keyword in self.excluded_keywords):
                 continue
-            email_senders, email_recipients = self.recover_email(email_content)
+            email_senders, email_recipients = self.proc_data.recover_email(email_content)
             if not len(email_recipients) >= 1:
                 continue
             entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
@@ -110,6 +102,6 @@ class LoadData:
             emails.append(email_data)
             
             stage_1_json_path = "data/stage_1/high_value_emails.json"
-            self.save_data_to_json(emails, stage_1_json_path)
+            self.file_ops.save_data_to_json(emails, stage_1_json_path)
         
         return emails

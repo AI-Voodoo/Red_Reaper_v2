@@ -12,9 +12,6 @@ class TargetStrings:
         prompt = "The company processed payroll through multiple methods, including cash, cheque, and credit card payments, ensuring that money transfers to each employee's bank account were completed on time. When handling accounts receivable, the finance team verified each invoice and updated payment details to accurately reflect the money wire transfers and credit issued to the client’s bank account. The audit revealed good profit due to while payroll was efficiently managed, but discrepancies were found in the cash flow records, particularly in how cheque payments and money wire transfers were recorded under accounts receivable and credit in the bank account."
         return prompt
         
-    def exlclusion_goals(self) -> str:
-        prompt = "Wall Street saw significant movement after Bloomberg's latest analysis, driving fluctuations in Dow Jones as traders adjusted their positions. A Bloomberg update on market trends led to a rally in the Dow Jones, prompting Wall Street investors to re-evaluate their trading strategies. News from Wall Street spurred a wave of trading activity, as Bloomberg reported a surprising shift in the Dow Jones, capturing the attention of stock market analysts."
-        return prompt
     
 class AdversaryPrompts:
     def __init__(self) -> None:
