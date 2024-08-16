@@ -69,6 +69,34 @@ class LoadEmailData:
             df = df_og.iloc[matching_index + 1:]
             return df
         return df_og
+    
+    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.49, money_score_float=0.49, combined_score_float=0.99, data_path="data/stage_1/high_value_emails.json") -> list:
+        emails = self.file_ops.load_json(data_path)
+        discarded_data = []
+        good_data = []
+        for email in emails:
+            email_meta_data = email['email_meta_data']
+            clean_content = email['clean_content']
+            law_score = email['law_score']
+            money_score = email['money_score']
+            combined_score = email['combined_score']
+            focused_law_content = email['focused_law_content']
+            focused_money_content = email['focused_money_content']
+
+            _, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
+            if alpha_ratio >= alpha_ratio_float:
+                if law_score > law_score_float: 
+                    good_data.append(email)
+                elif money_score > money_score_float:
+                    good_data.append(email)
+                elif combined_score > combined_score_float:
+                    good_data.append(email)
+                else:
+                    discarded_data.append(email)
+            else:
+                discarded_data.append(email)
+        return good_data, discarded_data
+
 
     def load_process_email_data(self, csv_path) -> list:
         stage_1_json_path = "data/stage_1/high_value_emails.json"
