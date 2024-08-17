@@ -13,11 +13,13 @@ logging.basicConfig(filename='data/logs/general_log.log', level=logging.INFO, fo
 
 #stage 1:
 enron_email_path = "data/enron_emails/emails.csv"
+refined_email_path = "data/stage_1/refined_high_value_emails.json"
 #emails = load_data.load_process_email_data(enron_email_path)
 
 
 
 # stage 2:
 kept_emails, discarded_data = load_data.filter_emails_based_on_alignment()
+file_ops.save_data_to_json(kept_emails, refined_email_path)
 
-print("")
+print(f"training set size: {len(kept_emails)}")

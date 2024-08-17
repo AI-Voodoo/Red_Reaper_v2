@@ -1,3 +1,4 @@
+import hashlib
 import json
 import logging
 import os
@@ -70,10 +71,38 @@ class LoadEmailData:
             return df
         return df_og
     
+    def add_email_to_hash_dict(self, law_content, money_content, hash_dict=None) -> tuple:
+        law_hash_novel = False
+        money_hash_novel = False
+        if hash_dict is None:
+            hash_dict ={}
+        
+        if law_content:
+            law_hash = hashlib.sha256(law_content.encode('utf-8')).hexdigest()
+        else:
+            law_hash = None  
+        if money_content:
+            money_hash = hashlib.sha256(money_content.encode('utf-8')).hexdigest()
+        else:
+            money_hash = None
+        if law_hash not in hash_dict:
+            hash_dict[law_hash] = law_content
+            law_hash_novel = True
+        else:
+            law_hash_novel = False
+        if money_hash not in hash_dict:
+            hash_dict[money_hash] = money_content
+            money_hash_novel = True
+        else:
+            money_hash_novel = False
+        return law_hash_novel, money_hash_novel, hash_dict
+
+    
     def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.39, money_score_float=0.39, combined_score_float=0.69, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
+        hash_dict = {}
         for email in emails:
             email_meta_data = email['email_meta_data']
             clean_content = email['clean_content']
@@ -82,6 +111,12 @@ class LoadEmailData:
             combined_score = email['combined_score']
             focused_law_content = email['focused_law_content']
             focused_money_content = email['focused_money_content']
+
+            law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(focused_law_content, focused_money_content, hash_dict)
+            if not law_hash_novel:
+                continue
+            if not money_hash_novel:
+                continue
 
             _, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
             if alpha_ratio >= alpha_ratio_float:
