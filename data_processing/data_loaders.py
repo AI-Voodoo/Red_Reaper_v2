@@ -33,8 +33,7 @@ class GeneralFileOperations:
 
     def file_exists(self, file_path) -> bool:
         return os.path.isfile(file_path)
-
-
+    
 
 class LoadEmailData:
     def __init__(self) -> None:
@@ -71,32 +70,37 @@ class LoadEmailData:
             return df
         return df_og
     
+    def hash_file(self, text) -> hash:
+        if text:
+            return hashlib.sha256(text.encode('utf-8')).hexdigest()
+        return None  
+    
+    def check_hash_dict(self, hash, text_content, hash_dict) -> tuple:
+        if hash not in hash_dict:
+            hash_dict[hash] = text_content
+            return True, hash_dict
+        return False, hash_dict
+
     def add_email_to_hash_dict(self, law_content, money_content, hash_dict=None) -> tuple:
         law_hash_novel = False
         money_hash_novel = False
         if hash_dict is None:
             hash_dict ={}
-       
-        if law_content:
-            law_hash = hashlib.sha256(law_content.encode('utf-8')).hexdigest()
-        else:
-            law_hash = None  
-        if money_content:
-            money_hash = hashlib.sha256(money_content.encode('utf-8')).hexdigest()
-        else:
-            money_hash = None
-        if law_hash not in hash_dict:
-            hash_dict[law_hash] = law_content
-            law_hash_novel = True
-        else:
-            law_hash_novel = False
-        if money_hash not in hash_dict:
-            hash_dict[money_hash] = money_content
-            money_hash_novel = True
-        else:
-            money_hash_novel = False
+
+        law_hash = self.hash_file(law_content)
+        money_hash = self.hash_file(money_content)
+
+        law_hash_novel, hash_dict = self.check_hash_dict(law_hash, law_content, hash_dict)
+        money_hash_novel, hash_dict = self.check_hash_dict(money_hash, money_content, hash_dict)
         return law_hash_novel, money_hash_novel, hash_dict
 
+    def add_data_to_dict(self, score, content) -> dict:
+        data = {
+            "score": score,
+            "content": content
+            }
+        return data
+        
     
     def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.39, money_score_float=0.39, combined_score_float=0.50, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
@@ -104,42 +108,26 @@ class LoadEmailData:
         good_data = []
         hash_dict = {}
         for email in emails:
-            clean_content = email['clean_content']
             law_score = email['law_score']
             money_score = email['money_score']
             combined_score = email['combined_score']
             focused_law_content = email['focused_law_content']
             focused_money_content = email['focused_money_content']
 
-            if len(clean_content) > 6000000000:
-                continue
             law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(focused_law_content, focused_money_content, hash_dict)
             if not law_hash_novel or not money_hash_novel:
                 continue
-            #_, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
-            #if alpha_ratio >= alpha_ratio_float:
             if law_score > law_score_float: 
-                data1 = {
-                    "score": law_score,
-                    "content": focused_law_content
-                }
+                data1 = self.add_data_to_dict(law_score, focused_law_content)
                 good_data.append(data1)
             elif money_score > money_score_float:
-                data2 = {
-                    "score": money_score,
-                    "content": focused_money_content
-                }
+                data2 = self.add_data_to_dict(money_score, focused_money_content)
                 good_data.append(data2)
             elif combined_score > combined_score_float:
-                data3 = {
-                    "score": combined_score,
-                    "content": f"{focused_law_content} {focused_money_content}"
-                }
+                data3 = self.add_data_to_dict(combined_score, f"{focused_law_content} {focused_money_content}")
                 good_data.append(data3)
             else:
                 discarded_data.append(email)
-            #else:
-                #discarded_data.append(email)
         return good_data, discarded_data
 
 
