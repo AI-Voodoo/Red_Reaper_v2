@@ -70,7 +70,7 @@ class LoadEmailData:
             return df
         return df_og
     
-    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.49, money_score_float=0.49, combined_score_float=0.99, data_path="data/stage_1/high_value_emails.json") -> list:
+    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.39, money_score_float=0.39, combined_score_float=0.69, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
