@@ -6,7 +6,7 @@ class DataPreProcess:
     def __init__(self) -> None:
         pass
 
-    def clean_email_content(self, content: str) -> str:
+    def clean_email_content(self, content) -> str:
         if "X-FileName:" in content:
             clean_content = content.split("X-FileName:", 1)[-1]
             clean_content = clean_content.replace("=01,", "'")

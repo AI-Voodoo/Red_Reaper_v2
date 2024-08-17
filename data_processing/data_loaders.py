@@ -76,7 +76,7 @@ class LoadEmailData:
         money_hash_novel = False
         if hash_dict is None:
             hash_dict ={}
-        
+       
         if law_content:
             law_hash = hashlib.sha256(law_content.encode('utf-8')).hexdigest()
         else:
@@ -98,13 +98,12 @@ class LoadEmailData:
         return law_hash_novel, money_hash_novel, hash_dict
 
     
-    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.39, money_score_float=0.39, combined_score_float=0.69, data_path="data/stage_1/high_value_emails.json") -> list:
+    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.32, money_score_float=0.32, combined_score_float=0.55, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
         hash_dict = {}
         for email in emails:
-            email_meta_data = email['email_meta_data']
             clean_content = email['clean_content']
             law_score = email['law_score']
             money_score = email['money_score']
@@ -113,11 +112,8 @@ class LoadEmailData:
             focused_money_content = email['focused_money_content']
 
             law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(focused_law_content, focused_money_content, hash_dict)
-            if not law_hash_novel:
+            if not law_hash_novel or not money_hash_novel:
                 continue
-            if not money_hash_novel:
-                continue
-
             _, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
             if alpha_ratio >= alpha_ratio_float:
                 if law_score > law_score_float: 
