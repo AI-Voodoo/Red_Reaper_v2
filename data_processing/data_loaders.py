@@ -98,7 +98,7 @@ class LoadEmailData:
         return law_hash_novel, money_hash_novel, hash_dict
 
     
-    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.32, money_score_float=0.32, combined_score_float=0.55, data_path="data/stage_1/high_value_emails.json") -> list:
+    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.39, money_score_float=0.39, combined_score_float=0.50, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
@@ -111,21 +111,35 @@ class LoadEmailData:
             focused_law_content = email['focused_law_content']
             focused_money_content = email['focused_money_content']
 
+            if len(clean_content) > 6000000000:
+                continue
             law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(focused_law_content, focused_money_content, hash_dict)
             if not law_hash_novel or not money_hash_novel:
                 continue
-            _, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
-            if alpha_ratio >= alpha_ratio_float:
-                if law_score > law_score_float: 
-                    good_data.append(email)
-                elif money_score > money_score_float:
-                    good_data.append(email)
-                elif combined_score > combined_score_float:
-                    good_data.append(email)
-                else:
-                    discarded_data.append(email)
+            #_, alpha_ratio, _ = self.proc_data.analyze_text(clean_content)
+            #if alpha_ratio >= alpha_ratio_float:
+            if law_score > law_score_float: 
+                data1 = {
+                    "score": law_score,
+                    "content": focused_law_content
+                }
+                good_data.append(data1)
+            elif money_score > money_score_float:
+                data2 = {
+                    "score": money_score,
+                    "content": focused_money_content
+                }
+                good_data.append(data2)
+            elif combined_score > combined_score_float:
+                data3 = {
+                    "score": combined_score,
+                    "content": f"{focused_law_content} {focused_money_content}"
+                }
+                good_data.append(data3)
             else:
                 discarded_data.append(email)
+            #else:
+                #discarded_data.append(email)
         return good_data, discarded_data
 
 
