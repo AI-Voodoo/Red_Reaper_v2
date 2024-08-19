@@ -1,7 +1,10 @@
+import json
 import logging
+from sklearn.model_selection import train_test_split
 import torch
 from sentence_transformers import SentenceTransformer
 from nlp.cosine import Cosine
+from torch.utils.data import TensorDataset
 
 class EmbeddingModel:
     _instance = None
@@ -16,7 +19,7 @@ class EmbeddingModel:
     def __init__(self):
         pass
 
-    def generate_embeddings(self, prompt, normalize=True) -> list: 
+    def generate_embeddings(self, prompt, normalize=False) -> list: 
         if prompt:
             if normalize:
                 return self.sentence_model.encode(prompt, normalize_embeddings=True)
@@ -28,4 +31,20 @@ class EmbeddingModel:
         text1_embedding = self.generate_embeddings(text1)
         text2_embedding = self.generate_embeddings(text2)
         return self.cosine_work.get_cosine_similarity(text1_embedding, text2_embedding)
+    
+    def train_test_set_embeddings(self, path) -> tuple:
+        with open(path, 'r') as file:
+            data = json.load(file)
+        embeddings = []
+        for item in data:
+            content = item['content']
+            embedding = self.generate_embeddings(content)
+            embeddings.append(torch.tensor(embedding, dtype=torch.float32)) 
+        embeddings_tensor = torch.stack(embeddings)
+        train_embeddings, test_embeddings = train_test_split(embeddings_tensor, test_size=0.2, random_state=42)
+
+        # Convert to TensorDataset if needed
+        train_dataset = TensorDataset(torch.tensor(train_embeddings, dtype=torch.float32))
+        val_dataset = TensorDataset(torch.tensor(test_embeddings, dtype=torch.float32))
+        return train_dataset, val_dataset
   

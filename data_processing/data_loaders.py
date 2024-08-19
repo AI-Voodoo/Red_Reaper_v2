@@ -94,7 +94,7 @@ class LoadEmailData:
         money_hash_novel, hash_dict = self.check_hash_dict(money_hash, money_content, hash_dict)
         return law_hash_novel, money_hash_novel, hash_dict
 
-    def add_data_to_dict(self, score, content) -> dict:
+    def create_data_dict_format(self, score, content) -> dict:
         data = {
             "score": score,
             "content": content
@@ -102,30 +102,34 @@ class LoadEmailData:
         return data
         
     
-    def filter_emails_based_on_alignment(self, law_score_float=0.29, money_score_float=0.29, combined_score_float=0.50, data_path="data/stage_1/high_value_emails.json") -> list:
+    def prepapre_training_set(self, law_score_float=0.33, money_score_float=0.33, combined_score_float=0.90, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
-        hash_dict = {}
         for email in emails:
             law_score = email['law_score']
             money_score = email['money_score']
             combined_score = email['combined_score']
             focused_law_content = email['focused_law_content']
             focused_money_content = email['focused_money_content']
+            clean_content = email['clean_content']
 
-            law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(focused_law_content, focused_money_content, hash_dict)
-            if not law_hash_novel or not money_hash_novel:
-                continue
-            if law_score > law_score_float: 
-                data1 = self.add_data_to_dict(law_score, focused_law_content)
+            if law_score >= law_score_float: 
+                data1 = self.create_data_dict_format(law_score, focused_law_content)
                 good_data.append(data1)
-            elif money_score > money_score_float:
-                data2 = self.add_data_to_dict(money_score, focused_money_content)
+            elif money_score >= money_score_float:
+                data2 = self.create_data_dict_format(money_score, focused_money_content)
                 good_data.append(data2)
-            elif combined_score > combined_score_float:
-                data3 = self.add_data_to_dict(combined_score, f"{focused_law_content} {focused_money_content}")
+            elif combined_score >= combined_score_float:
+                data3 = self.create_data_dict_format(combined_score, f"{focused_law_content} {focused_money_content}")
                 good_data.append(data3)
+            elif law_score >= law_score_float or money_score >= money_score_float:
+                if law_score >= law_score_float :
+                    content_score = law_score
+                else:
+                    content_score = money_score
+                data4 = self.create_data_dict_format(content_score, clean_content)
+                good_data.append(data4)
             else:
                 discarded_data.append(email)
         return good_data, discarded_data
