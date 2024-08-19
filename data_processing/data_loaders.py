@@ -145,7 +145,8 @@ class LoadEmailData:
         df = self.load_csv_to_df(csv_path) 
         if file_continue:
             df = self.prune_df(last_email_meta_data, df)
-            
+        
+        hash_dict = {}
         for _, row in df.iterrows():
             print(f"Analyzing email from: {row[0]}")
             email_content = row[1]
@@ -163,6 +164,9 @@ class LoadEmailData:
             if not (len(law_entities) >= 1 or len(money_entities) >=1 ):
                 continue
             law_sentences, money_sentences = self.spacy_work.extract_sentences_with_entities(clean_email_content, law_entities, money_entities)
+            law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(law_sentences, money_sentences, hash_dict)
+            if not law_hash_novel and not money_hash_novel:
+                continue
 
             law_score = 0.00
             money_score = 0.00
