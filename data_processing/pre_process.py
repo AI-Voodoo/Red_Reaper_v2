@@ -14,6 +14,8 @@ class DataPreProcess:
             clean_content = clean_content.replace("= ", "")
             clean_content = clean_content.replace("=09", "")
             clean_content = re.sub(r'\s+', ' ', clean_content)
+            if "Subject: " in content:
+                return clean_content.split("Subject: ")[-1]
             return clean_content
         return content
     

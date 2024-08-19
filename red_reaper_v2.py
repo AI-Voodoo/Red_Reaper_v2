@@ -14,7 +14,7 @@ enron_email_path = "data/enron_emails/emails.csv"
 refined_email_path = "data/stage_1/refined_high_value_emails.json"
 
 # stage 1: create inital dataset by finding potential training examples
-#emails = load_data.load_process_email_data(enron_email_path)
+emails = load_data.load_process_email_data(enron_email_path)
 
 
 # stage 2: refine dataset to pick the best subset of examples

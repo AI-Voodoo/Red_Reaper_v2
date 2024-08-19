@@ -16,9 +16,12 @@ class EmbeddingModel:
     def __init__(self):
         pass
 
-    def generate_embeddings(self, prompt) -> list: 
+    def generate_embeddings(self, prompt, normalize=True) -> list: 
         if prompt:
-            return self.sentence_model.encode(prompt)    
+            if normalize:
+                return self.sentence_model.encode(prompt, normalize_embeddings=True)
+            else:
+                 return self.sentence_model.encode(prompt)   
         return None
     
     def compare_text_for_similarity(self, text1, text2) -> float:
