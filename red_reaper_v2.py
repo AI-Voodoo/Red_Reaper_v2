@@ -18,9 +18,9 @@ emails = load_data.load_process_email_data(enron_email_path)
 
 
 # stage 2: refine dataset to pick the best subset of examples
-kept_emails, discarded_data = load_data.filter_emails_based_on_alignment()
-file_ops.save_data_to_json(kept_emails, refined_email_path)
-print(f"training set size: {len(kept_emails)}")
+#kept_emails, discarded_data = load_data.filter_emails_based_on_alignment()
+#file_ops.save_data_to_json(kept_emails, refined_email_path)
+#print(f"training set size: {len(kept_emails)}")
 
 
 # stage 3: LLM synthesize dataset based on best examples

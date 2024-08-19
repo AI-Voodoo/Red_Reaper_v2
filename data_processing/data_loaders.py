@@ -102,7 +102,7 @@ class LoadEmailData:
         return data
         
     
-    def filter_emails_based_on_alignment(self, alpha_ratio_float=0.75, law_score_float=0.29, money_score_float=0.29, combined_score_float=0.50, data_path="data/stage_1/high_value_emails.json") -> list:
+    def filter_emails_based_on_alignment(self, law_score_float=0.29, money_score_float=0.29, combined_score_float=0.50, data_path="data/stage_1/high_value_emails.json") -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
@@ -189,8 +189,6 @@ class LoadEmailData:
                 "focused_law_content": law_sentences if law_sentences else "No Law Content",
                 "focused_money_content": money_sentences if money_sentences else "No Money Content"
             }
-
-            
             # Merge the entities dictionary into the email_data dictionary
             email_data.update(entities)
             emails.append(email_data)
