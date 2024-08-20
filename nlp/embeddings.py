@@ -6,14 +6,18 @@ from sentence_transformers import SentenceTransformer
 from nlp.cosine import Cosine
 from torch.utils.data import TensorDataset
 
+
 class EmbeddingModel:
     _instance = None
     def __new__(cls) -> "EmbeddingModel":
+        from data_processing.data_loaders import LoadEmailData, DataPreProcess
         if cls._instance is None:
             cls._instance = super(EmbeddingModel, cls).__new__(cls)
             cls._instance.sentence_model = SentenceTransformer("all-mpnet-base-v2")
             cls._instance.device = torch.device("cpu")
             cls._instance.cosine_work = Cosine()
+            cls._instance.loader_email = LoadEmailData()
+            cls._instance.proc_data = DataPreProcess()
         return cls._instance
     
     def __init__(self):
@@ -47,4 +51,22 @@ class EmbeddingModel:
         train_dataset = TensorDataset(torch.tensor(train_embeddings, dtype=torch.float32))
         val_dataset = TensorDataset(torch.tensor(test_embeddings, dtype=torch.float32))
         return train_dataset, val_dataset
-  
+    
+
+    def test_ae_classificaton_load_set(self, csv_path="data/enron_emails/emails.csv", num_samples=500) -> tuple:
+        df = self.loader_email.load_csv_to_df(csv_path) 
+        df = df.sample(n=num_samples)
+        contents = []
+        embeddings = []
+        for _, row in df.iterrows():
+            email_content = row[1]
+            content = self.proc_data.clean_email_content(email_content)
+            if not content:
+                continue
+            embedding = self.generate_embeddings(content)
+     
+            contents.append(content)
+            embeddings.append(torch.tensor(embedding, dtype=torch.float32))
+        embeddings_tensor = torch.stack(embeddings)
+        return contents, embeddings_tensor
+    

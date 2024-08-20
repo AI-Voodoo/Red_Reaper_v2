@@ -14,30 +14,18 @@ class Autoencoder(nn.Module):
         
         # Define encoder layers
         self.encoder = nn.Sequential(
-            nn.Linear(input_dim, 512),
+            nn.Linear(input_dim, 128),
             nn.ReLU(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, 128),
-            nn.ReLU(),
-            nn.Linear(128, 64),
-            nn.ReLU(),
-            nn.Linear(64, 32)  # New Bottleneck layer
+            nn.Linear(128, 32)  # Bottleneck layer
         )
 
         # Define decoder layers
         self.decoder = nn.Sequential(
-            nn.Linear(32, 64),
+            nn.Linear(32, 128),
             nn.ReLU(),
-            nn.Linear(64, 128),
-            nn.ReLU(),
-            nn.Linear(128, 256),
-            nn.ReLU(),
-            nn.Linear(256, 512),
-            nn.ReLU(),
-            nn.Linear(512, input_dim)
+            nn.Linear(128, input_dim)
         )
-            
+
     def forward(self, x):
         x = self.encoder(x)
         x = self.decoder(x)
@@ -72,8 +60,8 @@ class TrainAE:
         criterion = nn.MSELoss()
 
         #, weight_decay=1e-5 & increase epoc max & lr increase from 0.01
-        optimizer = optim.Adam(self.model.parameters(), lr=0.01)
-        scheduler = ReduceLROnPlateau(optimizer, 'min', patience=5, factor=0.8, verbose=True)
+        optimizer = optim.Adam(self.model.parameters(), lr=0.001)
+        scheduler = ReduceLROnPlateau(optimizer, 'min', patience=3, factor=0.8, verbose=True)
         
         min_val_loss = float('inf')
         early_stopping_counter = 0
@@ -123,7 +111,7 @@ class TrainAE:
             else:
                 early_stopping_counter += 1
             
-            if early_stopping_counter == 7:
+            if early_stopping_counter == 5:
                 print("Early stopping!")
                 break
 
@@ -137,3 +125,37 @@ class TrainAE:
         plt.show()
 
         return self.model
+    
+
+class InferenceAE:
+    def __init__(self, model_path, input_dim=768):
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = Autoencoder(input_dim=input_dim).to(self.device)
+        self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+        self.model.eval()
+        self.criterion = nn.MSELoss()
+        self.embedding_work = EmbeddingModel()
+
+    def run_inference(self):
+        contents, embeddings_tensor = self.embedding_work.test_ae_classificaton_load_set()
+        inference_data = []
+        with torch.no_grad():
+            for i, (content, embedding) in enumerate(zip(contents, embeddings_tensor)):
+                embedding = embedding.to(self.device)
+                reconstructed_embedding = self.model(embedding)
+                loss = self.criterion(reconstructed_embedding, embedding).item()
+                print(f"Content {i+1}: {content}")
+                print(f"Loss: {loss:.7e}\n")
+                inference_data.append({
+                    "content": content,
+                    "loss": loss  # Store the loss as a float for accurate sorting
+                })
+        
+        # Sort the inference data by loss in ascending order
+        sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])
+        
+        # Optionally, format the loss back to scientific notation for display purposes
+        for data in sorted_inference_data:
+            data['loss'] = f"{data['loss']:.7e}"
+        
+        return sorted_inference_data
