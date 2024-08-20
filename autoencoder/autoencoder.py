@@ -47,11 +47,11 @@ class TrainAE:
         self.embedding_work = EmbeddingModel()
         self.model_out_path = "data/model/model.pth"
 
-    def AE_train_model(self):
+    def AE_train_model(self, path):
         self.file_ops.delete_file(self.model_out_path)
 
         # Load datasets
-        train_dataset, val_dataset = self.embedding_work.train_test_set_embeddings("data/stage_1/refined_high_value_emails.json")
+        train_dataset, val_dataset = self.embedding_work.train_test_set_embeddings(path)
 
         # Create DataLoaders
         train_loader = DataLoader(train_dataset, batch_size=self.batch_size, shuffle=True)

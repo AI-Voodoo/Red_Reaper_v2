@@ -1,0 +1,11 @@
+from autoencoder.autoencoder import InferenceAE
+from data_processing.data_loaders import GeneralFileOperations
+
+
+file_ops = GeneralFileOperations()
+run_ae = InferenceAE(model_path="data/model/model.pth")
+
+infernce_path = "data/stage_1/infernce.json"
+
+inference_data = run_ae.run_inference()
+file_ops.save_data_to_json(inference_data, infernce_path)
