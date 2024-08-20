@@ -53,9 +53,9 @@ class EmbeddingModel:
         return train_dataset, val_dataset
     
 
-    def test_ae_classificaton_load_set(self, csv_path="data/enron_emails/emails.csv", num_samples=500) -> tuple:
+    def test_ae_classificaton_load_set(self, csv_path, sample_amount) -> tuple:
         df = self.loader_email.load_csv_to_df(csv_path) 
-        df = df.sample(n=num_samples)
+        df = df.sample(n=sample_amount)
         contents = []
         embeddings = []
         for _, row in df.iterrows():

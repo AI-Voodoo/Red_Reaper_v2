@@ -9,7 +9,7 @@ from data_processing.data_loaders import GeneralFileOperations
 from nlp.embeddings import EmbeddingModel
 
 class Autoencoder(nn.Module):
-    def __init__(self, input_dim=768):
+    def __init__(self, input_dim=768) -> None:
         super(Autoencoder, self).__init__()
         
         # Define encoder layers
@@ -47,7 +47,7 @@ class TrainAE:
         self.embedding_work = EmbeddingModel()
         self.model_out_path = "data/model/model.pth"
 
-    def AE_train_model(self, path):
+    def AE_train_model(self, path) -> Autoencoder:
         self.file_ops.delete_file(self.model_out_path)
 
         # Load datasets
@@ -115,20 +115,11 @@ class TrainAE:
                 print("Early stopping!")
                 break
 
-        # Plot the training and validation loss
-        plt.figure(figsize=(10, 5))
-        plt.plot(train_losses, label='Training Loss')
-        plt.plot(val_losses, label='Validation Loss')
-        plt.xlabel('Epochs')
-        plt.ylabel('Loss')
-        plt.legend()
-        plt.show()
-
         return self.model
     
 
 class InferenceAE:
-    def __init__(self, model_path, input_dim=768):
+    def __init__(self, model_path, input_dim=768) -> None:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = Autoencoder(input_dim=input_dim).to(self.device)
         self.model.load_state_dict(torch.load(model_path, map_location=self.device))
@@ -136,8 +127,16 @@ class InferenceAE:
         self.criterion = nn.MSELoss()
         self.embedding_work = EmbeddingModel()
 
-    def run_inference(self):
-        contents, embeddings_tensor = self.embedding_work.test_ae_classificaton_load_set()
+    def classification(self, loss, high_value_threshold, low_value_threshold)-> str:
+        if loss <= high_value_threshold:
+            return "high value"
+        elif loss >= low_value_threshold:
+            return "low value"
+        else:
+            return "no decision"
+
+    def run_inference(self,csv_path, sample_amount, high_value_threshold, low_value_threshold) -> list:
+        contents, embeddings_tensor = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount)
         inference_data = []
         with torch.no_grad():
             for i, (content, embedding) in enumerate(zip(contents, embeddings_tensor)):
@@ -148,7 +147,8 @@ class InferenceAE:
                 print(f"Loss: {loss:.7e}\n")
                 inference_data.append({
                     "content": content,
-                    "loss": loss  # Store the loss as a float for accurate sorting
+                    "loss": loss,
+                    "class": f"{self.classification(loss, high_value_threshold, low_value_threshold)}"
                 })
         
         # Sort the inference data by loss in ascending order
@@ -156,6 +156,21 @@ class InferenceAE:
         
         # Optionally, format the loss back to scientific notation for display purposes
         for data in sorted_inference_data:
-            data['loss'] = f"{data['loss']:.7e}"
+            data['loss_sn'] = f"{data['loss']:.7e}"
         
         return sorted_inference_data
+    
+
+class VisualizeModel:
+    def __init__(self) -> None:
+        pass
+
+    def plot_stuff(self, data_points1, data_points2, x_label, y_label) -> None:
+        # Plot the training and validation loss
+        plt.figure(figsize=(10, 5))
+        plt.plot(data_points1, label='Training Loss')
+        plt.plot(data_points2, label='Validation Loss')
+        plt.xlabel(x_label)
+        plt.ylabel(y_label)
+        plt.legend()
+        plt.show()

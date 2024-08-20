@@ -1,11 +1,18 @@
+import numpy as np
 from autoencoder.autoencoder import InferenceAE
 from data_processing.data_loaders import GeneralFileOperations
 
 
+class Classification:
+    def __init__(self) -> None:
+        pass
+
+
 file_ops = GeneralFileOperations()
 run_ae = InferenceAE(model_path="data/model/model.pth")
+classify = Classification()
 
-infernce_path = "data/stage_1/infernce.json"
+infernce_path = "data/stage_1/infernce_output.json"
 
-inference_data = run_ae.run_inference()
+inference_data = run_ae.run_inference("data/enron_emails/emails.csv", sample_amount=100, high_value_threshold=0.00039, low_value_threshold=0.00075)
 file_ops.save_data_to_json(inference_data, infernce_path)
