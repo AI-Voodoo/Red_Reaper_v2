@@ -5,6 +5,7 @@ import torch
 from sentence_transformers import SentenceTransformer
 from nlp.cosine import Cosine
 from torch.utils.data import TensorDataset
+from nlp.prompts import TargetStrings
 
 
 class EmbeddingModel:
@@ -21,7 +22,9 @@ class EmbeddingModel:
         return cls._instance
     
     def __init__(self):
-        pass
+        self.target_prompts = TargetStrings()
+        self.law_target = self.target_prompts.collection_goals_legal()
+        self.money_target = self.target_prompts.collection_goals_money()
 
     def generate_embeddings(self, prompt, normalize=False) -> list: 
         if prompt:
@@ -58,15 +61,25 @@ class EmbeddingModel:
         df = df.sample(n=sample_amount)
         contents = []
         embeddings = []
+        law_score_list = []
+        money_score_list = []
+
         for _, row in df.iterrows():
+            law_score = 0.00
+            money_score = 0.00
+
             email_content = row[1]
             content = self.proc_data.clean_email_content(email_content)
             if not content:
                 continue
+            law_score = self.compare_text_for_similarity(content, self.law_target)
+            money_score = self.compare_text_for_similarity(content, self.money_target)
             embedding = self.generate_embeddings(content)
+            law_score_list.append(law_score)
+            money_score_list.append(money_score)
      
             contents.append(content)
             embeddings.append(torch.tensor(embedding, dtype=torch.float32))
         embeddings_tensor = torch.stack(embeddings)
-        return contents, embeddings_tensor
+        return contents, embeddings_tensor, law_score_list, money_score_list
     

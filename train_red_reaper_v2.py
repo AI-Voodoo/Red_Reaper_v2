@@ -17,7 +17,7 @@ emails = load_data.load_process_email_data(enron_email_path)
 
 
 # stage 2: prepare training set
-kept_emails, discarded_data = load_data.prepapre_training_set()
+kept_emails, discarded_data = load_data.prepapre_training_set(law_score_float=0.33, money_score_float=0.33, combined_score_float=0.90, data_path="data/stage_1/high_value_emails.json")
 file_ops.save_data_to_json(kept_emails, training_set_path)
 print(f"training set size: {len(kept_emails)}")
 

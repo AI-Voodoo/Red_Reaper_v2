@@ -5,7 +5,6 @@ import os
 import pandas as pd
 
 from nlp.nlp import SpacyNLP
-from nlp.llm_inference import LlmAssesText
 from nlp.prompts import TargetStrings
 from nlp.embeddings import EmbeddingModel
 from data_processing.pre_process import DataPreProcess
@@ -102,7 +101,7 @@ class LoadEmailData:
         return data
         
     
-    def prepapre_training_set(self, law_score_float=0.33, money_score_float=0.33, combined_score_float=0.90, data_path="data/stage_1/high_value_emails.json") -> list:
+    def prepapre_training_set(self, law_score_float, money_score_float, combined_score_float, data_path) -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []

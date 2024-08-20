@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from data_processing.data_loaders import GeneralFileOperations
 from nlp.embeddings import EmbeddingModel
 
+
+
 class Autoencoder(nn.Module):
     def __init__(self, input_dim=768) -> None:
         super(Autoencoder, self).__init__()
@@ -127,37 +129,43 @@ class InferenceAE:
         self.criterion = nn.MSELoss()
         self.embedding_work = EmbeddingModel()
 
-    def classification(self, loss, high_value_threshold, low_value_threshold)-> str:
+    def ae_classification(self, loss, high_value_threshold, low_value_threshold)-> str:
         if loss <= high_value_threshold:
             return "high value"
         elif loss >= low_value_threshold:
             return "low value"
         else:
             return "no decision"
+        
+    def cosine_classification(self, law_score, money_score, high_value_threshold)-> str:
+        if law_score >= high_value_threshold:
+            return "high value"
+        elif money_score >= high_value_threshold:
+            return "high value"
+        else:
+            return "no decision"
 
     def run_inference(self,csv_path, sample_amount, high_value_threshold, low_value_threshold) -> list:
-        contents, embeddings_tensor = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount)
+        contents, embeddings_tensor, law_score_list, money_score_list = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount)
         inference_data = []
         with torch.no_grad():
-            for i, (content, embedding) in enumerate(zip(contents, embeddings_tensor)):
+            for i, (content, embedding, law_score, money_score) in enumerate(zip(contents, embeddings_tensor, law_score_list, money_score_list)):
                 embedding = embedding.to(self.device)
                 reconstructed_embedding = self.model(embedding)
                 loss = self.criterion(reconstructed_embedding, embedding).item()
                 print(f"Content {i+1}: {content}")
                 print(f"Loss: {loss:.7e}\n")
+                
                 inference_data.append({
                     "content": content,
                     "loss": loss,
-                    "class": f"{self.classification(loss, high_value_threshold, low_value_threshold)}"
+                    "loss_sn": f"{loss:.7e}",
+                    "ae_class": f"{self.ae_classification(loss, high_value_threshold, low_value_threshold)}",
+                    "cosine_class": f"{self.cosine_classification(float(law_score), float(money_score), high_value_threshold=0.33)}",
+                    "money_score": float(money_score),
+                    "law_score": float(law_score)
                 })
-        
-        # Sort the inference data by loss in ascending order
-        sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])
-        
-        # Optionally, format the loss back to scientific notation for display purposes
-        for data in sorted_inference_data:
-            data['loss_sn'] = f"{data['loss']:.7e}"
-        
+        sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])       
         return sorted_inference_data
     
 
