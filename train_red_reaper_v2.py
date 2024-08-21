@@ -12,7 +12,7 @@ enron_email_path = "data/enron_emails/emails.csv"
 training_set_path = "data/stage_1/training_set.json"
 
 samples = 60000
-score_threshold=0.379
+score_threshold = 0.379
 
 # stage 1: create inital dataset by finding potential training examples
 emails = load_data.load_process_email_data(samples, enron_email_path, score_threshold)

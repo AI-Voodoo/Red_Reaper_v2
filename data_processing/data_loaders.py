@@ -106,7 +106,7 @@ class LoadEmailData:
 
     def load_process_email_data(self, samples, csv_path, score_threshold) -> list:
         stage_1_json_path = "data/stage_1/high_value_emails.json"
-
+        """
         file_continue = self.file_ops.file_exists(stage_1_json_path)
         if file_continue:
             emails = self.file_ops.load_json(stage_1_json_path)
@@ -114,11 +114,12 @@ class LoadEmailData:
                 last_email_meta_data = emails[-1]['email_meta_data']
         else:
             emails = []
-
+        """
+        emails = []
         df = self.load_csv_to_df(csv_path) 
         df = df.sample(n=samples, random_state=42)
-        if file_continue:
-            df = self.prune_df(last_email_meta_data, df)
+        #if file_continue:
+            #df = self.prune_df(last_email_meta_data, df)
 
         hash_dict = {}
         for _, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing emails"):
