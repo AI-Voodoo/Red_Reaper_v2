@@ -1,5 +1,6 @@
 import json
 import logging
+import pandas as pd
 from sklearn.model_selection import train_test_split
 import torch
 from sentence_transformers import SentenceTransformer
@@ -84,3 +85,27 @@ class EmbeddingModel:
         embeddings_tensor = torch.stack(embeddings)
         return contents, embeddings_tensor, content_score_list, unseen
     
+
+
+    def gpt_test_ae_classificaton_load_set(self, csv_path) -> tuple:
+
+        df = pd.read_csv(csv_path, header=None, names=['email_content'])
+
+        contents = []
+        embeddings = []
+        content_score_list = []
+
+        for _, row in df.iterrows():
+            content = row['email_content']
+
+            law_score = self.compare_text_for_similarity(content, self.law_target)
+            money_score = self.compare_text_for_similarity(content, self.money_target)
+            content_score = max(law_score, money_score)
+            content_score_list.append(content_score)
+    
+            embedding = self.generate_embeddings(content)
+            contents.append(content)
+            embeddings.append(torch.tensor(embedding, dtype=torch.float32))
+
+        embeddings_tensor = torch.stack(embeddings)
+        return contents, embeddings_tensor, content_score_list

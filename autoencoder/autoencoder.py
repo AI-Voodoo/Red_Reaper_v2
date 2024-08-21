@@ -146,13 +146,15 @@ class InferenceAE:
         else:
             return "no decision"
         
-    def cosine_classification(self, score, cosine_threshold)-> str:
+    def cosine_classification(self, score, cosine_threshold, cosine_min_threshold)-> str:
         if score >= cosine_threshold:
             return "high value"
+        elif score <= cosine_min_threshold:
+           return "low value" 
         else:
             return "no decision"
 
-    def run_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, seen_samples) -> list:
+    def run_enron_random_sample_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, seen_samples) -> list:
         unseen = None
         while True:
             contents, embeddings_tensor, score_list, unseen = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount, seen_samples, unseen)
@@ -176,7 +178,33 @@ class InferenceAE:
             sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])   
             self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)    
             input("\n\nPress enter...")
-   
+
+
+    def test_inference(self, csv_path, infernce_path, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold) -> list:
+
+        contents, embeddings_tensor, score_list = self.embedding_work.gpt_test_ae_classificaton_load_set(csv_path)
+        inference_data = []
+        with torch.no_grad():
+            for i, (content, embedding, content_score) in enumerate(zip(contents, embeddings_tensor, score_list)):
+                embedding = embedding.to(self.device)
+                reconstructed_embedding = self.model(embedding)
+                loss = self.criterion(reconstructed_embedding, embedding).item()
+                print(f"Content {i+1}: {content}")
+                print(f"Loss: {loss:.7e}\n")
+                    
+                inference_data.append({
+                    "content": content,
+                    "loss": loss,
+                    "loss_sn": f"{loss:.7e}",
+                    "ae_class": f"{self.ae_classification(loss, high_value_threshold, low_value_threshold)}",
+                    "cosine_class": f"{self.cosine_classification(float(content_score), cosine_threshold, cosine_min_threshold)}",
+                    "content_score": float(content_score)
+                })
+        sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])   
+        self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)
+        return sorted_inference_data
+
+
     
 
 class VisualizeModel:
