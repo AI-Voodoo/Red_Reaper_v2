@@ -47,7 +47,6 @@ class LoadEmailData:
 
         self.law_target = self.target_prompts.collection_goals_legal()
         self.money_target = self.target_prompts.collection_goals_money()
-
        
     def load_csv_to_df(self, csv_path) -> pd.DataFrame:
         df = pd.read_csv(csv_path, header=None, encoding='utf-8')
@@ -74,24 +73,14 @@ class LoadEmailData:
             return hashlib.sha256(text.encode('utf-8')).hexdigest()
         return None  
     
-    def check_hash_dict(self, hash, text_content, hash_dict) -> tuple:
+    def check_hash_dict(self, text_content, hash_dict=None) -> tuple:
+        if hash_dict is None:
+            hash_dict ={}
+        hash = self.hash_file(text_content)
         if hash not in hash_dict:
             hash_dict[hash] = text_content
             return True, hash_dict
         return False, hash_dict
-
-    def add_email_to_hash_dict(self, law_content, money_content, hash_dict=None) -> tuple:
-        law_hash_novel = False
-        money_hash_novel = False
-        if hash_dict is None:
-            hash_dict ={}
-
-        law_hash = self.hash_file(law_content)
-        money_hash = self.hash_file(money_content)
-
-        law_hash_novel, hash_dict = self.check_hash_dict(law_hash, law_content, hash_dict)
-        money_hash_novel, hash_dict = self.check_hash_dict(money_hash, money_content, hash_dict)
-        return law_hash_novel, money_hash_novel, hash_dict
 
     def create_data_dict_format(self, score, content) -> dict:
         data = {
@@ -99,42 +88,23 @@ class LoadEmailData:
             "content": content
             }
         return data
-        
     
-    def prepapre_training_set(self, law_score_float, money_score_float, combined_score_float, data_path) -> list:
+    def prepapre_training_set(self, score_float, data_path) -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
         for email in emails:
-            law_score = email['law_score']
-            money_score = email['money_score']
-            combined_score = email['combined_score']
-            focused_law_content = email['focused_law_content']
-            focused_money_content = email['focused_money_content']
             clean_content = email['clean_content']
-
-            if law_score >= law_score_float: 
-                data1 = self.create_data_dict_format(law_score, focused_law_content)
+            content_score = email['content_score']
+            if content_score >= score_float: 
+                data1 = self.create_data_dict_format(content_score, clean_content)
                 good_data.append(data1)
-            elif money_score >= money_score_float:
-                data2 = self.create_data_dict_format(money_score, focused_money_content)
-                good_data.append(data2)
-            elif combined_score >= combined_score_float:
-                data3 = self.create_data_dict_format(combined_score, f"{focused_law_content} {focused_money_content}")
-                good_data.append(data3)
-            elif law_score >= law_score_float or money_score >= money_score_float:
-                if law_score >= law_score_float :
-                    content_score = law_score
-                else:
-                    content_score = money_score
-                data4 = self.create_data_dict_format(content_score, clean_content)
-                good_data.append(data4)
             else:
                 discarded_data.append(email)
         return good_data, discarded_data
 
 
-    def load_process_email_data(self, csv_path) -> list:
+    def load_process_email_data(self, samples, csv_path, score_threshold) -> list:
         stage_1_json_path = "data/stage_1/high_value_emails.json"
 
         file_continue = self.file_ops.file_exists(stage_1_json_path)
@@ -146,9 +116,10 @@ class LoadEmailData:
             emails = []
 
         df = self.load_csv_to_df(csv_path) 
+        df = df.sample(n=samples, random_state=42)
         if file_continue:
             df = self.prune_df(last_email_meta_data, df)
-        
+
         hash_dict = {}
         for _, row in df.iterrows():
             print(f"Analyzing email from: {row[0]}")
@@ -162,38 +133,22 @@ class LoadEmailData:
             email_senders, email_recipients = self.proc_data.recover_email(email_content)
             if not len(email_recipients) >= 1:
                 continue
-            entities = self.spacy_work.get_entities_by_type(email_content, self.target_entity_list)
-            law_entities, money_entities = self.spacy_work.process_law_money_entities(entities)
-            if not (len(law_entities) >= 1 or len(money_entities) >=1 ):
+            hash_novel, hash_dict = self.check_hash_dict(clean_email_content, hash_dict)
+            if not hash_novel:
                 continue
-            law_sentences, money_sentences = self.spacy_work.extract_sentences_with_entities(clean_email_content, law_entities, money_entities)
-            law_hash_novel, money_hash_novel, hash_dict = self.add_email_to_hash_dict(law_sentences, money_sentences, hash_dict)
-            if not law_hash_novel and not money_hash_novel:
+            if clean_email_content:
+                law_score = self.embedding_work.compare_text_for_similarity(self.law_target, clean_email_content)
+                money_score = self.embedding_work.compare_text_for_similarity(self.money_target, clean_email_content)
+                content_score = max(law_score, money_score)
+            if content_score <= score_threshold:
                 continue
-
-            law_score = 0.00
-            money_score = 0.00
-
-            if law_sentences:
-                law_score = self.embedding_work.compare_text_for_similarity(self.law_target, law_sentences)
-            if money_sentences:
-                money_score = self.embedding_work.compare_text_for_similarity(self.money_target, money_sentences)
-            if law_score <= 0.29 and money_score <= 0.29:
-                continue
-            combined_score = law_score + money_score
             email_data = {
                 "email_meta_data": row[0],
                 "clean_content": clean_email_content,
                 "senders": email_senders,
                 "recipients": email_recipients,
-                "law_score": float(law_score) if law_score is not None else "No Law Content Found",
-                "money_score": float(money_score) if money_score is not None else "No Money Content Found",
-                "combined_score": float(combined_score),
-                "focused_law_content": law_sentences if law_sentences else "No Law Content",
-                "focused_money_content": money_sentences if money_sentences else "No Money Content"
+                "content_score": float(content_score)
             }
-            # Merge the entities dictionary into the email_data dictionary
-            email_data.update(entities)
             emails.append(email_data)
             self.file_ops.save_data_to_json(emails, stage_1_json_path)
         

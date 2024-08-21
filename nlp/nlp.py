@@ -6,7 +6,6 @@ class SpacyNLP:
     def __new__(cls) -> "SpacyNLP":
         if cls._instance is None:
             cls._instance = super(SpacyNLP, cls).__new__(cls)
-            #cls._instance.nlp = spacy.load("en_core_web_trf")
             cls._instance.nlp = spacy.load("en_core_web_lg")
         return cls._instance
     

@@ -128,6 +128,7 @@ class InferenceAE:
         self.model.eval()
         self.criterion = nn.MSELoss()
         self.embedding_work = EmbeddingModel()
+        self.file_ops = GeneralFileOperations()
 
     def ae_classification(self, loss, high_value_threshold, low_value_threshold)-> str:
         if loss <= high_value_threshold:
@@ -137,36 +138,37 @@ class InferenceAE:
         else:
             return "no decision"
         
-    def cosine_classification(self, law_score, money_score, high_value_threshold)-> str:
-        if law_score >= high_value_threshold:
-            return "high value"
-        elif money_score >= high_value_threshold:
+    def cosine_classification(self, score, cosine_threshold)-> str:
+        if score >= cosine_threshold:
             return "high value"
         else:
             return "no decision"
 
-    def run_inference(self,csv_path, sample_amount, high_value_threshold, low_value_threshold) -> list:
-        contents, embeddings_tensor, law_score_list, money_score_list = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount)
-        inference_data = []
-        with torch.no_grad():
-            for i, (content, embedding, law_score, money_score) in enumerate(zip(contents, embeddings_tensor, law_score_list, money_score_list)):
-                embedding = embedding.to(self.device)
-                reconstructed_embedding = self.model(embedding)
-                loss = self.criterion(reconstructed_embedding, embedding).item()
-                print(f"Content {i+1}: {content}")
-                print(f"Loss: {loss:.7e}\n")
-                
-                inference_data.append({
-                    "content": content,
-                    "loss": loss,
-                    "loss_sn": f"{loss:.7e}",
-                    "ae_class": f"{self.ae_classification(loss, high_value_threshold, low_value_threshold)}",
-                    "cosine_class": f"{self.cosine_classification(float(law_score), float(money_score), high_value_threshold=0.33)}",
-                    "money_score": float(money_score),
-                    "law_score": float(law_score)
-                })
-        sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])       
-        return sorted_inference_data
+    def run_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, seen_samples) -> list:
+        unseen = None
+        while True:
+            contents, embeddings_tensor, score_list, unseen = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount, seen_samples, unseen)
+            inference_data = []
+            with torch.no_grad():
+                for i, (content, embedding, content_score) in enumerate(zip(contents, embeddings_tensor, score_list)):
+                    embedding = embedding.to(self.device)
+                    reconstructed_embedding = self.model(embedding)
+                    loss = self.criterion(reconstructed_embedding, embedding).item()
+                    print(f"Content {i+1}: {content}")
+                    print(f"Loss: {loss:.7e}\n")
+                    
+                    inference_data.append({
+                        "content": content,
+                        "loss": loss,
+                        "loss_sn": f"{loss:.7e}",
+                        "ae_class": f"{self.ae_classification(loss, high_value_threshold, low_value_threshold)}",
+                        "cosine_class": f"{self.cosine_classification(float(content_score), cosine_threshold)}",
+                        "content_score": float(content_score)
+                    })
+            sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])   
+            self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)    
+            input("\n\nPress enter...")
+   
     
 
 class VisualizeModel:
