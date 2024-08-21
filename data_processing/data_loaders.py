@@ -3,7 +3,7 @@ import json
 import logging
 import os
 import pandas as pd
-
+from tqdm import tqdm
 from nlp.nlp import SpacyNLP
 from nlp.prompts import TargetStrings
 from nlp.embeddings import EmbeddingModel
@@ -121,8 +121,7 @@ class LoadEmailData:
             df = self.prune_df(last_email_meta_data, df)
 
         hash_dict = {}
-        for _, row in df.iterrows():
-            print(f"Analyzing email from: {row[0]}")
+        for _, row in tqdm(df.iterrows(), total=df.shape[0], desc="Processing emails"):
             email_content = row[1]
 
             clean_email_content = self.proc_data.clean_email_content(email_content)
