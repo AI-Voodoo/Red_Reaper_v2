@@ -48,7 +48,7 @@ class EmbeddingModel:
             embedding = self.generate_embeddings(content)
             embeddings.append(torch.tensor(embedding, dtype=torch.float32)) 
         embeddings_tensor = torch.stack(embeddings)
-        train_embeddings, test_embeddings = train_test_split(embeddings_tensor, test_size=0.2, random_state=42)
+        train_embeddings, test_embeddings = train_test_split(embeddings_tensor, test_size=0.1, random_state=42)
 
         train_dataset = TensorDataset(torch.tensor(train_embeddings, dtype=torch.float32))
         val_dataset = TensorDataset(torch.tensor(test_embeddings, dtype=torch.float32))
@@ -57,7 +57,7 @@ class EmbeddingModel:
     def test_ae_classificaton_load_set(self, csv_path, sample_amount, seen_samples, unseen=None) -> tuple:
         if unseen is None or unseen.empty:
             df = self.loader_email.load_csv_to_df(csv_path) 
-            seen = df.sample(n=seen_samples, random_state=42)
+            seen = df.sample(n=seen_samples, random_state=32)
             unseen = df.drop(seen.index)
             df_sample = unseen.sample(n=sample_amount)
         else:

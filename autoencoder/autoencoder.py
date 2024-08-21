@@ -16,7 +16,11 @@ class Autoencoder(nn.Module):
         
         # Define encoder layers
         self.encoder = nn.Sequential(
-            nn.Linear(input_dim, 128),
+            nn.Linear(input_dim, 512),
+            nn.ReLU(),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Linear(256, 128),
             nn.ReLU(),
             nn.Linear(128, 32)  # Bottleneck layer
         )
@@ -25,7 +29,11 @@ class Autoencoder(nn.Module):
         self.decoder = nn.Sequential(
             nn.Linear(32, 128),
             nn.ReLU(),
-            nn.Linear(128, input_dim)
+            nn.Linear(128, 256),
+            nn.ReLU(),
+            nn.Linear(256, 512),
+            nn.ReLU(),
+            nn.Linear(512, input_dim)
         )
 
     def forward(self, x):
@@ -62,7 +70,7 @@ class TrainAE:
         criterion = nn.MSELoss()
 
         #, weight_decay=1e-5 & increase epoc max & lr increase from 0.01
-        optimizer = optim.Adam(self.model.parameters(), lr=0.001)
+        optimizer = optim.Adam(self.model.parameters(), lr=0.0001)
         scheduler = ReduceLROnPlateau(optimizer, 'min', patience=3, factor=0.8, verbose=True)
         
         min_val_loss = float('inf')

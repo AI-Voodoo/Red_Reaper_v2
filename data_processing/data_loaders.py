@@ -117,7 +117,7 @@ class LoadEmailData:
         """
         emails = []
         df = self.load_csv_to_df(csv_path) 
-        df = df.sample(n=samples, random_state=42)
+        df = df.sample(n=samples, random_state=32)
         #if file_continue:
             #df = self.prune_df(last_email_meta_data, df)
 
