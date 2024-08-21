@@ -154,7 +154,7 @@ class InferenceAE:
         else:
             return "no decision"
 
-    def run_enron_random_sample_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, seen_samples) -> list:
+    def run_enron_random_sample_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold, seen_samples) -> list:
         unseen = None
         while True:
             contents, embeddings_tensor, score_list, unseen = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount, seen_samples, unseen)
@@ -172,12 +172,13 @@ class InferenceAE:
                         "loss": loss,
                         "loss_sn": f"{loss:.7e}",
                         "ae_class": f"{self.ae_classification(loss, high_value_threshold, low_value_threshold)}",
-                        "cosine_class": f"{self.cosine_classification(float(content_score), cosine_threshold)}",
+                        "cosine_class": f"{self.cosine_classification(float(content_score), cosine_threshold, cosine_min_threshold)}",
                         "content_score": float(content_score)
                     })
             sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])   
             self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)    
             input("\n\nPress enter...")
+            return 
 
 
     def test_inference(self, csv_path, infernce_path, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold) -> list:
