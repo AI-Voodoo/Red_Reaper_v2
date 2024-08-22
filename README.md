@@ -13,7 +13,7 @@ Here's the evolution:
 
 - v2 introduces a learning component, initially trained on the Enron email dataset and tested against GPT-generated synthetic communications (small set for now). Now, the system can not only generalize by identifying unseen, valuable emails—but can also improve over time.
 
-**This project is still in its early proof-of-concept phase**, but I’ll be sharing write-ups and code as development progresses. The rest of this repo focusses on stage 1, malicious email/chat classification. The ultimate goal of this project is to spark curiosity and inspire others to build and explore the intersection of cyber security and data science. 
+**This project is still in its early proof-of-concept phase**, but I’ll be sharing write-ups and code as development progresses. The rest of this repo focusses on stage 1, sensitive email/chat classification. The ultimate goal of this project is to spark curiosity and inspire others to build and explore the intersection of cyber security and data science. 
 
 
 <b>*Reminder: Ensure to install cuda version of pytorch if you can - things will be much faster.*</b>
