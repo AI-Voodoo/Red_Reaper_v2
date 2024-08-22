@@ -17,6 +17,8 @@ Here's the evolution:
 
 
 <b>*Reminder: Ensure to install cuda version of pytorch if you can - things will be much faster.*</b>
+-This was developed using dual A 6000’s (96GB vRAM) / 256GB CPU RAM
+-This was also tested on a decent gaming laptop (8GB vRAM) / 64GB CPU RAM
 
 
 
