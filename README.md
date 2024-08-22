@@ -4,7 +4,7 @@
 </p>
 
 ## Global Project Overview
-The Red Reaper project is all about automation identifying email communications that could be weaponized for malicious purposes. In [ Red Reaper v1](https://www.cybermongol.ca/frontier-research/red-reaper-building-an-ai-espionage-agent), the system demonstrated its ability to operationalize stolen messages, using an LLM to devise strategies and analyze and map communication patterns using graph data science. However, the true potential of this system depends on a critical first stage: accurately classifying valuable emails.
+The Red Reaper project is all about automation identifying sensitive communications that could be weaponized for malicious purposes. In [ Red Reaper v1](https://www.cybermongol.ca/frontier-research/red-reaper-building-an-ai-espionage-agent), the system demonstrated its ability to operationalize stolen messages, using an LLM to devise strategies and analyze and map communication patterns using graph data science. However, the true potential of this system depends on a critical first stage: accurately classifying valuable emails.
 
 Red Reaper v2 takes this essential capability to the next level by incorporating deep learning. This version focuses on training the system to distinguish valuable communications—those that can be exploited—from the rest. The early results, as shown in the confusion matrices, are promising.
 
@@ -40,4 +40,6 @@ Before we can train a model to classify potentially valuable communications from
 
 That’s right, we’re letting automation handle the initial labeling. We’re using an autoencoder, a type of deep neural network designed for anomaly detection, which will be trained on a single class. Our plan is to sift through the half-million emails in the Enron corpus, which range from highly confidential enterprise communications to personal emails about an employee's love life and create a training subset. This diverse mix means our automated method for identifying sensitive corporate communications has a serious challenge ahead.
 
+At the heart of this process, we [define two key strings that semantically represent the legal and financial](https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/nlp/prompts.py) undertones we hope the agent will identify as high-value. We then use sentence transformers to generate embeddings—numerical representations—of these strings and compare them with embeddings for every email in the corpus using cosine similarity. Emails that surpass a certain threshold make it into the training set for our autoencoder.
 
+This method can be extended by defining additional target strings such as those related to IT systems, credentials etc. 
