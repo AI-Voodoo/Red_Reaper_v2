@@ -43,3 +43,9 @@ That’s right, we’re letting automation handle the initial labeling. We’re 
 At the heart of this process, we [define two key strings that semantically represent the legal and financial](https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/nlp/prompts.py) undertones we hope the agent will identify as high-value. We then use sentence transformers to generate embeddings—numerical representations—of these strings and compare them with embeddings for every email in the corpus using cosine similarity. Emails that surpass a certain threshold make it into the training set for our autoencoder.
 
 This method can be extended by defining additional target strings such as those related to IT systems, credentials etc. 
+
+### Training an Autoencoder
+First, what is an autoencoder? For this, I will let my friends at MIT deep dive on it – I strongly recommend this video to get a feel for what is happening here.
+<p align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=3G5hWM6jqPk&t=662s" frameborder="0" allowfullscreen></iframe>
+</p>
