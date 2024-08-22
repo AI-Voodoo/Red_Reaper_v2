@@ -34,6 +34,6 @@ Here's the evolution:
 *Note: Training is optional as is this repo comes with a model for inference. But, just doing inference is no fun…let’s dive in and see how this was trained.*
 
 ### Building the Training Set
-[Download Enron email corpus](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset) and save to data/enron_emails/
+[Download Enron email corpus](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset) and save to [data/enron_emails/](https://github.com/AI-Voodoo/Red_Reaper_v2/tree/main/data/enron_emails)
 Before we can train a model to classify potentially valuable communications from a red team perspective, we need to construct a training dataset. 
  
