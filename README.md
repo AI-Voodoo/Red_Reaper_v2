@@ -23,7 +23,7 @@ Here's the evolution:
 
 
 
-## Stage 1: Malicious Email/Chat Classification for Red Team Operations
+## Stage 1: Sensitive Email/Chat Classification for Adversary Agent Emulation (espionage)
 
 
 ### Training 
@@ -34,6 +34,10 @@ Here's the evolution:
 *Note: Training is optional as is this repo comes with a model for inference. But, just doing inference is no fun…let’s dive in and see how this was trained.*
 
 ### Building the Training Set
-[Download Enron email corpus](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset) and save to [data/enron_emails/](https://github.com/AI-Voodoo/Red_Reaper_v2/tree/main/data/enron_emails)
-Before we can train a model to classify potentially valuable communications from a red team perspective, we need to construct a training dataset. 
- 
+[Download Enron email corpus](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset) and save to [data/enron_emails/](https://github.com/AI-Voodoo/Red_Reaper_v2/tree/main/data/enron_emails).
+
+Before we can train a model to classify potentially valuable communications from an espionage agent’s perspective, we need to build a training dataset. This means either labeling examples ourselves of what we consider high-value communications, or—more efficiently—using automation to do the heavy lifting.
+
+That’s right, we’re letting automation handle the initial labeling. We’re using an autoencoder, a type of deep neural network designed for anomaly detection, which will be trained on a single class. Our plan is to sift through the half-million emails in the Enron corpus, which range from highly confidential enterprise communications to personal emails about an employee's love life and create a training subset. This diverse mix means our automated method for identifying sensitive corporate communications has a serious challenge ahead.
+
+
