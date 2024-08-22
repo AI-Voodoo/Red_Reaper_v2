@@ -59,9 +59,26 @@ Now that we have some background, we're going to feed the embeddings created fro
 Now that we have a trained model—or if you're using the pre-trained model included with the repo—we can evaluate its performance. Classification is achieved by passing data through the trained autoencoder and then observing the error value. Lower error values indicate that the autoencoder recognizes the data, while higher error values suggest it does not. A threshold is set to determine the classification. This is a straightforward setup to demonstrate the concept.
 
 We have two evaluation options for this:
-1.	**Random Sampling of Unseen Enron Data:** This method allows us to compare how a cosine similarity threshold classifies the text versus how the autoencoder does. This quick evaluation provides an initial look at the model's performance, offering insights into its effectiveness.
+1.	**Random Sampling of Unseen Enron Data:** This method allows us to compare how a cosine similarity threshold classifies the text versus how the autoencoder does. This quick evaluation provides an [initial look](https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/stage_1/infernce_output.json) at the model's performance, offering insights into its effectiveness. json sorted in DESC order, HIGH -> LOW.
 2.	**Plotting Confusion Matrices:** This approach involves testing the model against a small set of GPT-generated high-value and low-value classes. Although the test set is small, it seems to do the trick. I also chose to include shorter-length strings in the test set, as this might challenge the model more, given the nature of the training data. Additionally, I wanted to assess whether the model could be used to classify shorter messages, such as those found in Teams or Slack messages.
 
+### Sample High/Low-Value Classification on the Enron Dataset
+The high-value email reveals an impending FBI raid on the facilities—information that criminals could exploit significantly before it becomes public. In contrast, the low-value email is simply a conversation about hang gliding.
+
+**HIGH: FBI Raid**
+<p align="left">
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/FBI_high_value.PNG?raw=true" alt="Description" style="width:100%;" />
+</p>
+
+**LOW: Hang Gliding**
+<p align="left">
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/hang_gliding_low_value.PNG?raw=true" alt="Description" style="width:100%;" />
+</p>
+
+**Confusion Matrix**
+<p align="left">
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/plots/ae_c_matrix.png?raw=true" alt="Description" style="width:100%;" />
+</p>
 
 
 ### Coming
