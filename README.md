@@ -22,4 +22,8 @@ Here's the evolution:
 ## Stage 1: Malicious Email/Chat Classification for Red Team Operations
 
 ### Training 
+<p align="center">
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/training.PNG?raw=true" alt="Description" style="width:50%;" />
+</p>
+
 Before we can train of model to classify potentially ¬valuable communications from a red team perspective, we need to construct a training dataset. 
