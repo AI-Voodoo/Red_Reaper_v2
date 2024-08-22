@@ -1,7 +1,7 @@
 # Red Reaper v2
 
 ## Global Project Overview
-The Red Reaper project is all about automation identifying email communications that could be weaponized for malicious purposes. In v1, the system demonstrated its ability to operationalize stolen messages, using an LLM to devise strategies and analyze and map communication patterns using graph data science. However, the true potential of this system depends on a critical first step: accurately triaging valuable emails.
+The Red Reaper project is all about automation identifying email communications that could be weaponized for malicious purposes. In [ Red Reaper v1](https://www.cybermongol.ca/frontier-research/red-reaper-building-an-ai-espionage-agent), the system demonstrated its ability to operationalize stolen messages, using an LLM to devise strategies and analyze and map communication patterns using graph data science. However, the true potential of this system depends on a critical first step: accurately triaging valuable emails.
 
 Red Reaper v2 takes this essential capability to the next level by incorporating deep learning. This version focuses on training the system to distinguish valuable communications—those that can be exploited—from the rest. The early results, as shown in the confusion matrices, are promising.
 
