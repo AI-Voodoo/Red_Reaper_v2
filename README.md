@@ -21,4 +21,5 @@ Here's the evolution:
 
 ## Stage 1: Malicious Email/Chat Classification for Red Team Operations
 
-
+### Training 
+Before we can train of model to classify potentially ¬valuable communications from a red team perspective, we need to construct a training dataset. 
