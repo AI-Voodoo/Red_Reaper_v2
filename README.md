@@ -31,6 +31,9 @@ Here's the evolution:
 <img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/training.PNG?raw=true" alt="Description" style="width:75%;" />
 </p>
 
-*Note: Training is optional as is this repo comes with a model for inference. But just doing inference is no fun…let’s dive in and see how this was trained.*
+*Note: Training is optional as is this repo comes with a model for inference. But, just doing inference is no fun…let’s dive in and see how this was trained.*
 
-Before we can train of model to classify potentially valuable communications from a red team perspective, we need to construct a training dataset. 
+### Building the Training Set
+[Download Enron email corpus](https://www.kaggle.com/datasets/wcukierski/enron-email-dataset) and save to data/enron_emails/
+Before we can train a model to classify potentially valuable communications from a red team perspective, we need to construct a training dataset. 
+ 
