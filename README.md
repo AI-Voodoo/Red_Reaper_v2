@@ -15,6 +15,6 @@ Here's the evolution:
 
 This project is still in its proof-of-concept phase, but I’ll be sharing write-ups and code as development progresses. The rest of this repo focusses on stage 1, malicious email/chat classification. 
 
-*Reminder: Ensure to install cuda version of pytorch if you can -things will be much faster.*
+<b>*Reminder: Ensure to install cuda version of pytorch if you can -things will be much faster.*</b>
 
 ## Stage 1: Malicious Email/Chat Classification for Red Team Operations
