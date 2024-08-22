@@ -31,4 +31,6 @@ Here's the evolution:
 <img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/training.PNG?raw=true" alt="Description" style="width:75%;" />
 </p>
 
-Before we can train of model to classify potentially ¬valuable communications from a red team perspective, we need to construct a training dataset. 
+*Note: Training is optional as is this repo comes with a model for inference. But just doing inference is no fun…let’s dive in and see how this was trained.*
+
+Before we can train of model to classify potentially valuable communications from a red team perspective, we need to construct a training dataset. 
