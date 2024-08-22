@@ -47,6 +47,8 @@ This method can be extended by defining additional target strings such as those 
 ### Training an Autoencoder
 First, what is an autoencoder? For this, I will let my friends at MIT deep dive on it – I strongly recommend this video to get a feel for what is happening here.
 
-watch: [MIT 6.S191 (2023): Deep Generative Modeling](https://www.youtube.com/watch?v=3G5hWM6jqPk&t=662s)
+**watch:** [MIT 6.S191 (2023): Deep Generative Modeling](https://www.youtube.com/watch?v=3G5hWM6jqPk&t=662s)
+
+Now that we have some background, we're going to feed the embeddings created from the training set into the autoencoder. We'll use a [network architecture](https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/autoencoder/autoencoder.py) that encodes these embeddings, learning to keep only the most salient features in a latent space, while discarding the rest. When the autoencoder decodes these features from the latent space, it evaluates how well it can reconstruct the embedding compared to the original, using a loss function. This process trains the autoencoder to identify the most important semantic features of the text that define sensitive communications.
 
 
