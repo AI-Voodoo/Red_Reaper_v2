@@ -3,11 +3,9 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import ReduceLROnPlateau
-import matplotlib.pyplot as plt
 
 from data_processing.data_loaders import GeneralFileOperations
 from nlp.embeddings import EmbeddingModel
-
 
 
 class Autoencoder(nn.Module):
@@ -58,6 +56,12 @@ class TrainAE:
         self.model_out_path = "data/model/model.pth"
 
     def AE_train_model(self, path) -> Autoencoder:
+        model_exists = self.file_ops.file_exists(self.model_out_path)
+        if model_exists:
+            print(f"\n\n* Trained model already exists. Are you sure you want to delete it? y/n")
+            choice = input("\n\neneter y/n:  ")
+            if choice.lower() == "n" or choice.lower() == "no":
+                return
         self.file_ops.delete_file(self.model_out_path)
 
         # Load datasets
@@ -154,10 +158,10 @@ class InferenceAE:
         else:
             return "no decision"
 
-    def run_enron_random_sample_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold, seen_samples) -> list:
+    def run_enron_random_sample_inference(self,csv_path, infernce_path, sample_amount, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold, seen_samples, start_seed) -> list:
         unseen = None
         while True:
-            contents, embeddings_tensor, score_list, unseen = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount, seen_samples, unseen)
+            contents, embeddings_tensor, score_list, unseen = self.embedding_work.test_ae_classificaton_load_set(csv_path, sample_amount, seen_samples, start_seed, unseen)
             inference_data = []
             with torch.no_grad():
                 for i, (content, embedding, content_score) in enumerate(zip(contents, embeddings_tensor, score_list)):
@@ -177,12 +181,12 @@ class InferenceAE:
                     })
             sorted_inference_data = sorted(inference_data, key=lambda x: x['loss'])   
             self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)    
-            input("\n\nPress enter...")
-            return 
+            choice = input("\n\nPress enter or type 'exit': ")
+            if choice.lower() == "exit":
+                return 
 
 
     def test_inference(self, csv_path, infernce_path, high_value_threshold, low_value_threshold, cosine_threshold, cosine_min_threshold) -> list:
-
         contents, embeddings_tensor, score_list = self.embedding_work.gpt_test_ae_classificaton_load_set(csv_path)
         inference_data = []
         with torch.no_grad():
@@ -205,19 +209,3 @@ class InferenceAE:
         self.file_ops.save_data_to_json(sorted_inference_data, infernce_path)
         return sorted_inference_data
 
-
-    
-
-class VisualizeModel:
-    def __init__(self) -> None:
-        pass
-
-    def plot_stuff(self, data_points1, data_points2, x_label, y_label) -> None:
-        # Plot the training and validation loss
-        plt.figure(figsize=(10, 5))
-        plt.plot(data_points1, label='Training Loss')
-        plt.plot(data_points2, label='Validation Loss')
-        plt.xlabel(x_label)
-        plt.ylabel(y_label)
-        plt.legend()
-        plt.show()

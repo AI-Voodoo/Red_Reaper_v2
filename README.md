@@ -1,2 +1,3 @@
 # Red_Reaper_v2
-Source code for AI-enabled espionage agent inspired from leaked APT threat group documents.
+
+## Stage 1: AI-driven Malicious Email/Chat Classification for Red Team Operations

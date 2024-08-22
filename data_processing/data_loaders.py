@@ -1,10 +1,8 @@
 import hashlib
 import json
-import logging
 import os
 import pandas as pd
 from tqdm import tqdm
-from nlp.nlp import SpacyNLP
 from nlp.prompts import TargetStrings
 from nlp.embeddings import EmbeddingModel
 from data_processing.pre_process import DataPreProcess
@@ -41,7 +39,6 @@ class LoadEmailData:
 
         self.file_ops = GeneralFileOperations()
         self.proc_data = DataPreProcess()
-        self.spacy_work = SpacyNLP()
         self.target_prompts = TargetStrings()
         self.embedding_work = EmbeddingModel()
 
@@ -89,14 +86,14 @@ class LoadEmailData:
             }
         return data
     
-    def prepapre_training_set(self, score_float, data_path) -> list:
+    def prepapre_training_set(self, min_score_threshold, data_path) -> list:
         emails = self.file_ops.load_json(data_path)
         discarded_data = []
         good_data = []
         for email in emails:
             clean_content = email['clean_content']
             content_score = email['content_score']
-            if content_score >= score_float: 
+            if content_score >= min_score_threshold: 
                 data1 = self.create_data_dict_format(content_score, clean_content)
                 good_data.append(data1)
             else:
@@ -104,20 +101,15 @@ class LoadEmailData:
         return good_data, discarded_data
 
 
-    def load_process_email_data(self, samples, csv_path, score_threshold) -> list:
+    def load_process_email_data(self, samples, csv_path, min_score_threshold, start_seed) -> list:
         stage_1_json_path = "data/stage_1/high_value_emails.json"
-        """
-        file_continue = self.file_ops.file_exists(stage_1_json_path)
-        if file_continue:
-            emails = self.file_ops.load_json(stage_1_json_path)
-            if emails:
-                last_email_meta_data = emails[-1]['email_meta_data']
-        else:
-            emails = []
-        """
+        file_skip = self.file_ops.file_exists(stage_1_json_path)
+        if file_skip:
+            print(f"\n\n* Processed email data already exists {stage_1_json_path}")
+            return
         emails = []
         df = self.load_csv_to_df(csv_path) 
-        df = df.sample(n=samples, random_state=32)
+        df = df.sample(n=samples, random_state=start_seed)
         #if file_continue:
             #df = self.prune_df(last_email_meta_data, df)
 
@@ -140,7 +132,7 @@ class LoadEmailData:
                 law_score = self.embedding_work.compare_text_for_similarity(self.law_target, clean_email_content)
                 money_score = self.embedding_work.compare_text_for_similarity(self.money_target, clean_email_content)
                 content_score = max(law_score, money_score)
-            if content_score <= score_threshold:
+            if content_score <= min_score_threshold:
                 continue
             email_data = {
                 "email_meta_data": row[0],

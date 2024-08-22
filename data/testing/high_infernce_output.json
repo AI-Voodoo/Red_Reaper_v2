@@ -1,0 +1,1394 @@
+[
+    {
+        "content": "For your review: Attached are the details of our off-balance-sheet financing. This is highly confidential and sensitive.",
+        "loss": 0.00040926499059423804,
+        "loss_sn": "4.0926499e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3592853546142578
+    },
+    {
+        "content": "For your review: Attached are the details of our off-balance-sheet financing. This is highly confidential and sensitive.",
+        "loss": 0.00040926499059423804,
+        "loss_sn": "4.0926499e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3592853546142578
+    },
+    {
+        "content": "The attached file contains our negotiations strategy for the upcoming supplier contracts. Review the terms and conditions discreetly.",
+        "loss": 0.000422810873715207,
+        "loss_sn": "4.2281087e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4169479310512543
+    },
+    {
+        "content": "Attached are the contractual agreements with our freelancers. Please check for compliance with our new confidentiality standards.",
+        "loss": 0.000438668648712337,
+        "loss_sn": "4.3866865e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.38536354899406433
+    },
+    {
+        "content": "Please ensure the attached financial report is reviewed thoroughly before our Monday board meeting. It contains critical insights into our Q2 earnings.",
+        "loss": 0.00045864618732593954,
+        "loss_sn": "4.5864619e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.39083439111709595
+    },
+    {
+        "content": "The attached file contains our confidential banking arrangements and cash handling procedures. Review the security protocols outlined.",
+        "loss": 0.00047107189311645925,
+        "loss_sn": "4.7107189e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.449934720993042
+    },
+    {
+        "content": "Confidential: The latest market research reports are attached. Please analyze our position in the context of recent industry shifts.",
+        "loss": 0.0004765336634591222,
+        "loss_sn": "4.7653366e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.33405765891075134
+    },
+    {
+        "content": "Confidential: Attached is a detailed analysis of our capital market activities. Review for upcoming financial strategy meetings.",
+        "loss": 0.0004766118654515594,
+        "loss_sn": "4.7661187e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.37930142879486084
+    },
+    {
+        "content": "The confidential briefing on our liquidity status is attached. Review before our discussion on possible short-term investments.",
+        "loss": 0.00047712604282423854,
+        "loss_sn": "4.7712604e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3012658357620239
+    },
+    {
+        "content": "The financial briefing for our upcoming shareholder meeting is attached. Review all figures and strategic plans in detail.",
+        "loss": 0.00047911281581036747,
+        "loss_sn": "4.7911282e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3550797700881958
+    },
+    {
+        "content": "Attached are the preliminary results of the financial due diligence for the potential startup acquisition. Handle this information with care.",
+        "loss": 0.00048077962128445506,
+        "loss_sn": "4.8077962e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5225135087966919
+    },
+    {
+        "content": "The financial briefing for our upcoming investor relations meeting is attached. Review all figures and forecasts in detail.",
+        "loss": 0.00048079012776724994,
+        "loss_sn": "4.8079013e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.32337892055511475
+    },
+    {
+        "content": "The financial briefing for our upcoming investor relations meeting is attached. Review all figures and forecasts in detail.",
+        "loss": 0.00048079012776724994,
+        "loss_sn": "4.8079013e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.32337892055511475
+    },
+    {
+        "content": "The draft proposal for the merger with CompanyY is attached. Please provide your feedback on the financial implications and partnership terms.",
+        "loss": 0.0004912849981337786,
+        "loss_sn": "4.9128500e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5234833359718323
+    },
+    {
+        "content": "Confidential: Attached are the detailed financial terms for our negotiations with potential investors. Review carefully before the discussions.",
+        "loss": 0.0005007119616493583,
+        "loss_sn": "5.0071196e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.40102657675743103
+    },
+    {
+        "content": "The confidential financial integration plans for the newly acquired subsidiary are attached. Please review and provide your insights.",
+        "loss": 0.000513317296281457,
+        "loss_sn": "5.1331730e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5928741097450256
+    },
+    {
+        "content": "Confidential: The legal advisories regarding our intellectual property dispute are attached. Review and prepare for the litigation strategy session.",
+        "loss": 0.0005316563765518367,
+        "loss_sn": "5.3165638e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5015360713005066
+    },
+    {
+        "content": "Please review the attached strategic briefing on potential regulatory changes affecting our operations in Europe. We need to adjust our compliance protocols accordingly.",
+        "loss": 0.0005393573082983494,
+        "loss_sn": "5.3935731e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.427064448595047
+    },
+    {
+        "content": "The financial audit results for Q4 are attached. Review them closely and prepare a summary for the upper management.",
+        "loss": 0.0005442906985990703,
+        "loss_sn": "5.4429070e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.47014111280441284
+    },
+    {
+        "content": "Attached you will find the confidential HR transition plan for the upcoming reorganization. Please familiarize yourself with the key changes.",
+        "loss": 0.000545026152394712,
+        "loss_sn": "5.4502615e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.42194461822509766
+    },
+    {
+        "content": "Confidential: The performance review and promotion recommendations for key staff are detailed in the attached documents. Handle with discretion.",
+        "loss": 0.000546885363291949,
+        "loss_sn": "5.4688536e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.37994682788848877
+    },
+    {
+        "content": "Confidential: The executive compensation report for the last fiscal year is attached. Review the discrepancies and prepare a justification for the audit committee.",
+        "loss": 0.0005497250240296125,
+        "loss_sn": "5.4972502e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4998083710670471
+    },
+    {
+        "content": "Attached is the quarterly ethics compliance financial audit. Please review the findings and prepare for the necessary adjustments.",
+        "loss": 0.000550704135093838,
+        "loss_sn": "5.5070414e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4631766080856323
+    },
+    {
+        "content": "Please prepare for the upcoming corporate governance meeting by reviewing the attached governance structure review document.",
+        "loss": 0.0005511806812137365,
+        "loss_sn": "5.5118068e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.38570427894592285
+    },
+    {
+        "content": "Please review the attached expense reports from the recent executive travel. Note any discrepancies or unusual expenditures.",
+        "loss": 0.0005516003584489226,
+        "loss_sn": "5.5160036e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4843514561653137
+    },
+    {
+        "content": "Confidential: Attached is a detailed analysis of our investment strategies in the technology sector. Review for upcoming investment committee discussions.",
+        "loss": 0.000554861908312887,
+        "loss_sn": "5.5486191e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.42040586471557617
+    },
+    {
+        "content": "Confidential: The latest investment portfolio reviews are attached. Please assess our positions in tech and healthcare sectors.",
+        "loss": 0.000558595173060894,
+        "loss_sn": "5.5859517e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.31441256403923035
+    },
+    {
+        "content": "The strategic review document for our capital expenditures in 2024 is attached. This contains confidential budget planning information.",
+        "loss": 0.0005590097862295806,
+        "loss_sn": "5.5900979e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3075798749923706
+    },
+    {
+        "content": "Please review the attached legal brief on the upcoming intellectual property case. We need to align on our defense strategy by next week.",
+        "loss": 0.0005643562180921435,
+        "loss_sn": "5.6435622e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5051158666610718
+    },
+    {
+        "content": "Confidential financial models for our new product launch are attached. Review the break-even analysis and margin forecasts.",
+        "loss": 0.0005719894543290138,
+        "loss_sn": "5.7198945e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.351544052362442
+    },
+    {
+        "content": "Confidential financial models for our new product launch are attached. Review the break-even analysis and margin forecasts.",
+        "loss": 0.0005719894543290138,
+        "loss_sn": "5.7198945e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.351544052362442
+    },
+    {
+        "content": "I have attached the internal guidelines for our upcoming compliance audit. Please ensure your teams are briefed accordingly.",
+        "loss": 0.00057492486666888,
+        "loss_sn": "5.7492487e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4106168746948242
+    },
+    {
+        "content": "Attached are the lease negotiation details for our new corporate office. Review the financial implications and lease terms discreetly.",
+        "loss": 0.0005769309937022626,
+        "loss_sn": "5.7693099e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.42290133237838745
+    },
+    {
+        "content": "For internal review: Attached are our quarterly compliance reports for environmental regulations. Please assess our adherence to the new guidelines.",
+        "loss": 0.0005843426915816963,
+        "loss_sn": "5.8434269e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3106706142425537
+    },
+    {
+        "content": "Confidential: The executive briefing on potential acquisitions in the fintech sector is attached. Review the targets and strategic fit.",
+        "loss": 0.000588428636547178,
+        "loss_sn": "5.8842864e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.43657150864601135
+    },
+    {
+        "content": "The exclusive briefing on our strategic partnership discussions with MediaCo is attached. Review the potential synergies and conflicts of interest.",
+        "loss": 0.0005885891150683165,
+        "loss_sn": "5.8858912e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.472552627325058
+    },
+    {
+        "content": "Please assess the attached proposals for enhancing our data security protocols. This is critical for our upcoming compliance certification.",
+        "loss": 0.0005908980965614319,
+        "loss_sn": "5.9089810e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3266642689704895
+    },
+    {
+        "content": "Please examine the attached quarterly performance review for our top management. It contains sensitive assessments and future recommendations.",
+        "loss": 0.0005912953638471663,
+        "loss_sn": "5.9129536e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.34305140376091003
+    },
+    {
+        "content": "Please ensure the attached legal memos regarding our export controls compliance are reviewed thoroughly before the regulatory audit.",
+        "loss": 0.0005930070765316486,
+        "loss_sn": "5.9300708e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3779945969581604
+    },
+    {
+        "content": "The investment analysis report for our renewable energy projects is attached. This is sensitive financial planning information.",
+        "loss": 0.0005964980809949338,
+        "loss_sn": "5.9649808e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.24503305554389954
+    },
+    {
+        "content": "The confidential briefing on our strategic shifts due to global economic changes is attached. Review and prepare for the executive strategy meeting.",
+        "loss": 0.0005982163711450994,
+        "loss_sn": "5.9821637e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.39364516735076904
+    },
+    {
+        "content": "Please examine the attached confidential report detailing our market share growth and associated financial leverages.",
+        "loss": 0.0006000082939863205,
+        "loss_sn": "6.0000829e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3762410581111908
+    },
+    {
+        "content": "The attached document outlines potential cost-saving measures that are under consideration. These are sensitive and need your discreet review.",
+        "loss": 0.0006013967795297503,
+        "loss_sn": "6.0139678e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.32496508955955505
+    },
+    {
+        "content": "I've attached the negotiation strategies for our upcoming contract renewals with key suppliers. Ensure you understand the cost-benefit analysis before the meetings.",
+        "loss": 0.0006023223977535963,
+        "loss_sn": "6.0232240e-04",
+        "ae_class": "high value",
+        "cosine_class": "no decision",
+        "content_score": 0.3789878487586975
+    },
+    {
+        "content": "For your review: Attached are the details of our proprietary software developments. This includes critical technology and intellectual property information.",
+        "loss": 0.0006079619051888585,
+        "loss_sn": "6.0796191e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3349670171737671
+    },
+    {
+        "content": "Confidential: The investment risk assessment for our new tech venture is attached. Analyze the potential ROI and market entry barriers before our next executive meeting.",
+        "loss": 0.0006120765465311706,
+        "loss_sn": "6.1207655e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.35045596957206726
+    },
+    {
+        "content": "For your review: Attached are the financial projections for our new market initiative. Note the assumptions used and prepare to discuss their feasibility.",
+        "loss": 0.0006129143293946981,
+        "loss_sn": "6.1291433e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2905200123786926
+    },
+    {
+        "content": "Attached is the strategic review proposal for our underperforming business units. Please provide your confidential feedback by the end of this week.",
+        "loss": 0.0006167074898257852,
+        "loss_sn": "6.1670749e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2859637141227722
+    },
+    {
+        "content": "For your eyes only: Attached are the employee performance reviews. We need to discuss potential promotions and terminations confidentially.",
+        "loss": 0.0006168203544802964,
+        "loss_sn": "6.1682035e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.27955305576324463
+    },
+    {
+        "content": "Confidential: The details of our negotiation with BrandX are in the attached document. Please review it before our strategy session next week.",
+        "loss": 0.0006247277488000691,
+        "loss_sn": "6.2472775e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4599687159061432
+    },
+    {
+        "content": "Confidential: The executive summary of our forensic audit on project mischarges is attached. Review before the audit committee meeting.",
+        "loss": 0.0006248698337003589,
+        "loss_sn": "6.2486983e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4268151521682739
+    },
+    {
+        "content": "Confidential: Attached are the detailed terms for our pending merger with CompanyZ. Review and prepare for confidential discussions with the merger task force.",
+        "loss": 0.0006272904574871063,
+        "loss_sn": "6.2729046e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5745234489440918
+    },
+    {
+        "content": "Attached are the preliminary risk assessment results for our new market entry strategy. Handle this information with care.",
+        "loss": 0.0006283235270529985,
+        "loss_sn": "6.2832353e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.28416749835014343
+    },
+    {
+        "content": "The encrypted document contains sensitive information regarding our internal cybersecurity enhancements. Please review and prepare your recommendations.",
+        "loss": 0.0006289256270974874,
+        "loss_sn": "6.2892563e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.32285839319229126
+    },
+    {
+        "content": "The internal review report on our IT security measures is attached. Please assess the recommendations and prepare for the system upgrade discussions.",
+        "loss": 0.000629151938483119,
+        "loss_sn": "6.2915194e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2983444035053253
+    },
+    {
+        "content": "Please find attached the confidential evaluations of our recent market testing initiatives. Review the findings and prepare for the product launch meeting.",
+        "loss": 0.0006300088716670871,
+        "loss_sn": "6.3000887e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30285483598709106
+    },
+    {
+        "content": "The marketing strategy and campaign plans for the upcoming quarter are attached. This contains sensitive competitive information.",
+        "loss": 0.0006319245439954102,
+        "loss_sn": "6.3192454e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2947985529899597
+    },
+    {
+        "content": "Please review the confidential salary benchmarking report attached and prepare for the HR strategy meeting.",
+        "loss": 0.0006329844472929835,
+        "loss_sn": "6.3298445e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.38953661918640137
+    },
+    {
+        "content": "Please analyze the attached financial implications of the proposed changes to our product pricing strategies.",
+        "loss": 0.0006340993568301201,
+        "loss_sn": "6.3409936e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3645182251930237
+    },
+    {
+        "content": "Confidential: Attached is a detailed analysis of our debt-to-equity ratio trends over the past three years. Review for strategic insights.",
+        "loss": 0.0006388028850778937,
+        "loss_sn": "6.3880289e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3557688295841217
+    },
+    {
+        "content": "Confidential: Attached is a detailed analysis of our debt-to-equity ratio trends over the past three years. Review for strategic insights.",
+        "loss": 0.0006388028850778937,
+        "loss_sn": "6.3880289e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3557688295841217
+    },
+    {
+        "content": "Please verify the data in the attached strategic investment plan for our infrastructure projects. This will be critical for our long-term growth strategy.",
+        "loss": 0.0006398848490789533,
+        "loss_sn": "6.3988485e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.26851987838745117
+    },
+    {
+        "content": "The confidential integration strategy for our recent acquisition is detailed in the attached document. Review and prepare your questions for the integration team.",
+        "loss": 0.000640411744825542,
+        "loss_sn": "6.4041174e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5743703842163086
+    },
+    {
+        "content": "Attached are the expense and reimbursement details for the executive team's recent international visit. Review for accuracy and compliance with our financial policies.",
+        "loss": 0.0006417024414986372,
+        "loss_sn": "6.4170244e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3668968081474304
+    },
+    {
+        "content": "Confidential: See the attached for our cash flow analysis under various economic scenarios. We need to prepare for the upcoming fiscal review.",
+        "loss": 0.0006436716648750007,
+        "loss_sn": "6.4367166e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4191024899482727
+    },
+    {
+        "content": "Confidential: Please verify the accuracy of the attached financial models for our upcoming product launches. This is critical for our budget planning session.",
+        "loss": 0.0006479576695710421,
+        "loss_sn": "6.4795767e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2992834448814392
+    },
+    {
+        "content": "Please assess the attached detailed reports on our stock option allocations for C-level executives. This is sensitive compensation information.",
+        "loss": 0.000649313791655004,
+        "loss_sn": "6.4931379e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.314521849155426
+    },
+    {
+        "content": "The confidential briefing on our negotiation stance with the municipal government is attached. Review before our meeting with the city officials.",
+        "loss": 0.0006493525579571724,
+        "loss_sn": "6.4935256e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2953121066093445
+    },
+    {
+        "content": "The internal audit findings on our procurement processes are attached. Please review and prepare for the corrective action planning session.",
+        "loss": 0.0006521496688947082,
+        "loss_sn": "6.5214967e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.43047958612442017
+    },
+    {
+        "content": "Confidential: Attached are the detailed financial terms for our joint venture proposal with TechCorp. Review carefully before the negotiation.",
+        "loss": 0.0006523248739540577,
+        "loss_sn": "6.5232487e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4472956657409668
+    },
+    {
+        "content": "Confidential: Attached are the detailed financial terms for our joint venture proposal with TechCorp. Review carefully before the negotiation.",
+        "loss": 0.0006523248739540577,
+        "loss_sn": "6.5232487e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.4472956657409668
+    },
+    {
+        "content": "Confidential: Attached are our projections for shareholder dividends for the next three quarters. Review and prepare for the upcoming directors' meeting.",
+        "loss": 0.0006523894844576716,
+        "loss_sn": "6.5238948e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.24821341037750244
+    },
+    {
+        "content": "Please find attached the sensitive information regarding our upcoming product recall. Review the customer communication strategy and legal ramifications.",
+        "loss": 0.0006570246769115329,
+        "loss_sn": "6.5702468e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.272244930267334
+    },
+    {
+        "content": "The investment withdrawal details for our venture capital activities are attached. This is sensitive financial planning information.",
+        "loss": 0.0006570766563527286,
+        "loss_sn": "6.5707666e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3342241644859314
+    },
+    {
+        "content": "The investment withdrawal details for our venture capital activities are attached. This is sensitive financial planning information.",
+        "loss": 0.0006570766563527286,
+        "loss_sn": "6.5707666e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3342241644859314
+    },
+    {
+        "content": "Confidential: The detailed reports on our product development pipeline are attached. Review the timelines and budget allocations for each project.",
+        "loss": 0.0006607274990528822,
+        "loss_sn": "6.6072750e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2897518277168274
+    },
+    {
+        "content": "Confidential: The bonus payout projections for the next year are attached. Ensure discretion when reviewing this document.",
+        "loss": 0.0006610958371311426,
+        "loss_sn": "6.6109584e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2991598844528198
+    },
+    {
+        "content": "Confidential: The bonus payout projections for the next year are attached. Ensure discretion when reviewing this document.",
+        "loss": 0.0006610958371311426,
+        "loss_sn": "6.6109584e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2991598844528198
+    },
+    {
+        "content": "Please examine the attached quarterly tax compliance report. It contains sensitive information regarding our fiscal positions.",
+        "loss": 0.0006639352068305016,
+        "loss_sn": "6.6393521e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.3973517417907715
+    },
+    {
+        "content": "Please examine the attached quarterly tax compliance report. It contains sensitive information regarding our fiscal positions.",
+        "loss": 0.0006639352068305016,
+        "loss_sn": "6.6393521e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.3973517417907715
+    },
+    {
+        "content": "The exclusive details of our debt refinancing plan are attached. Review the terms and projected impacts before the finance committee meeting.",
+        "loss": 0.0006652944721281528,
+        "loss_sn": "6.6529447e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3056735396385193
+    },
+    {
+        "content": "The encrypted file contains sensitive information regarding our tax restructuring plans. Please review and prepare questions for our tax advisors.",
+        "loss": 0.000668482796754688,
+        "loss_sn": "6.6848280e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30604156851768494
+    },
+    {
+        "content": "For your review: Attached are the projections for our workforce expansion, including budget and timelines. This is sensitive planning information.",
+        "loss": 0.0006686951965093613,
+        "loss_sn": "6.6869520e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.22452682256698608
+    },
+    {
+        "content": "For internal use only: Please review the attached proposals for adjusting our supply chain logistics in response to recent trade restrictions.",
+        "loss": 0.0006698513170704246,
+        "loss_sn": "6.6985132e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30501383543014526
+    },
+    {
+        "content": "Confidential: Attached are the evaluations of our current investments in emerging markets. Consider the geopolitical risks mentioned.",
+        "loss": 0.0006702241371385753,
+        "loss_sn": "6.7022414e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.19976216554641724
+    },
+    {
+        "content": "For your review: Attached are the details of our venture capital fundraising efforts. This includes sensitive negotiations and potential investor lists.",
+        "loss": 0.00067105982452631,
+        "loss_sn": "6.7105982e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.25483056902885437
+    },
+    {
+        "content": "The financial implications of our proposed partnership with FinTech Startups are detailed in the attached report. Review and note any potential conflicts of interest.",
+        "loss": 0.000671800400596112,
+        "loss_sn": "6.7180040e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.3872149586677551
+    },
+    {
+        "content": "The attached spreadsheet contains detailed projections for our next quarter's sales targets. This data is sensitive and must be kept confidential.",
+        "loss": 0.0006729246815666556,
+        "loss_sn": "6.7292468e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2637857496738434
+    },
+    {
+        "content": "The attached file contains our negotiations playbook for the upcoming union discussions. It includes sensitive strategies and expected outcomes.",
+        "loss": 0.0006733198533765972,
+        "loss_sn": "6.7331985e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30942219495773315
+    },
+    {
+        "content": "Please ensure the attached detailed projections for our real estate investments are reviewed. It includes market trends and potential ROI calculations.",
+        "loss": 0.0006744679412804544,
+        "loss_sn": "6.7446794e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.22967250645160675
+    },
+    {
+        "content": "For your eyes only: Attached is our competitive analysis for Q2. It includes sensitive information about competitor strategies and market movements.",
+        "loss": 0.0006768385646864772,
+        "loss_sn": "6.7683856e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3085203766822815
+    },
+    {
+        "content": "Please verify the data in the attached accounts receivable aging reports before we discuss the cash flow impact in our meeting.",
+        "loss": 0.0006812300416640937,
+        "loss_sn": "6.8123004e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.45656323432922363
+    },
+    {
+        "content": "Please verify the data in the attached accounts receivable aging reports before we discuss the cash flow impact in our meeting.",
+        "loss": 0.0006812300416640937,
+        "loss_sn": "6.8123004e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.45656323432922363
+    },
+    {
+        "content": "Please assess the attached security audit results for our new data center. This information is critical for our network upgrade plan.",
+        "loss": 0.0006844683084636927,
+        "loss_sn": "6.8446831e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30231285095214844
+    },
+    {
+        "content": "For internal review: Attached are our quarterly foreign exchange exposure reports. Please assess our hedging strategies.",
+        "loss": 0.0006878008134663105,
+        "loss_sn": "6.8780081e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.33020132780075073
+    },
+    {
+        "content": "For internal review: Attached are our quarterly foreign exchange exposure reports. Please assess our hedging strategies.",
+        "loss": 0.0006878008134663105,
+        "loss_sn": "6.8780081e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.33020132780075073
+    },
+    {
+        "content": "Please ensure the attached accounts payable reports are accurate before they are submitted for the annual audit.",
+        "loss": 0.000688637956045568,
+        "loss_sn": "6.8863796e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5287449359893799
+    },
+    {
+        "content": "Please ensure the attached accounts payable reports are accurate before they are submitted for the annual audit.",
+        "loss": 0.000688637956045568,
+        "loss_sn": "6.8863796e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.5287449359893799
+    },
+    {
+        "content": "The strategic implications of the proposed government tariffs on our imports are detailed in the attached document. Review before our policy response team meeting.",
+        "loss": 0.0006922811735421419,
+        "loss_sn": "6.9228117e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2659626603126526
+    },
+    {
+        "content": "Please ensure the attached investment committee briefing is reviewed. It includes critical insights into our asset allocation adjustments.",
+        "loss": 0.000695752096362412,
+        "loss_sn": "6.9575210e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2625422775745392
+    },
+    {
+        "content": "Please ensure the attached investment committee briefing is reviewed. It includes critical insights into our asset allocation adjustments.",
+        "loss": 0.000695752096362412,
+        "loss_sn": "6.9575210e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2625422775745392
+    },
+    {
+        "content": "The strategic planning document for our global expansion is attached. It contains confidential analysis and projections.",
+        "loss": 0.0007009062683209777,
+        "loss_sn": "7.0090627e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3140123188495636
+    },
+    {
+        "content": "The internal briefing document for our upcoming patent litigation case is attached. Review the key arguments and evidence list confidentially.",
+        "loss": 0.0007034062291495502,
+        "loss_sn": "7.0340623e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.43811026215553284
+    },
+    {
+        "content": "Please prepare for the upcoming risk management meeting by reviewing the attached insurance claim reports.",
+        "loss": 0.0007051980355754495,
+        "loss_sn": "7.0519804e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29521429538726807
+    },
+    {
+        "content": "Please prepare for the upcoming risk management meeting by reviewing the attached insurance claim reports.",
+        "loss": 0.0007051980355754495,
+        "loss_sn": "7.0519804e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29521429538726807
+    },
+    {
+        "content": "The fiscal policy adjustment document is attached. It contains sensitive information regarding our lobbying efforts.",
+        "loss": 0.0007060746429488063,
+        "loss_sn": "7.0607464e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2808818817138672
+    },
+    {
+        "content": "The fiscal policy adjustment document is attached. It contains sensitive information regarding our lobbying efforts.",
+        "loss": 0.0007060746429488063,
+        "loss_sn": "7.0607464e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2808818817138672
+    },
+    {
+        "content": "Please analyze the attached competitive intelligence report detailing key moves by our main competitors in the last quarter.",
+        "loss": 0.0007121063536033034,
+        "loss_sn": "7.1210635e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3549007475376129
+    },
+    {
+        "content": "Please ensure the attached strategic forecasts for our digital transformation initiatives are reviewed. It includes critical insights into our adoption timelines and technology investments.",
+        "loss": 0.0007163171540014446,
+        "loss_sn": "7.1631715e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.287287175655365
+    },
+    {
+        "content": "Confidential: The strategy document for our upcoming cost reduction initiative is attached. Review and prepare for the departmental briefings.",
+        "loss": 0.0007192703778855503,
+        "loss_sn": "7.1927038e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.27027085423469543
+    },
+    {
+        "content": "Confidential: The cost-benefit analysis of relocating our manufacturing base is attached. Please go through it before the strategic planning session.",
+        "loss": 0.0007208418101072311,
+        "loss_sn": "7.2084181e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3278924226760864
+    },
+    {
+        "content": "Confidential: The cost-benefit analysis of relocating our manufacturing base is attached. Please go through it before the strategic planning session.",
+        "loss": 0.0007208418101072311,
+        "loss_sn": "7.2084181e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3278924226760864
+    },
+    {
+        "content": "For internal use only: Attached are the forecasted impacts of the proposed tax reforms on our business operations. Focus on the implications for our overseas earnings.",
+        "loss": 0.0007209560717456043,
+        "loss_sn": "7.2095607e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.28701290488243103
+    },
+    {
+        "content": "Confidential financial models for expanding our e-commerce operations are attached. Review the market analysis and profitability forecasts.",
+        "loss": 0.0007230056216940284,
+        "loss_sn": "7.2300562e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3526724576950073
+    },
+    {
+        "content": "The attached spreadsheet contains detailed customer acquisition costs and lifetime value calculations. This data is sensitive.",
+        "loss": 0.000724468263797462,
+        "loss_sn": "7.2446826e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29341861605644226
+    },
+    {
+        "content": "The attached spreadsheet contains detailed customer acquisition costs and lifetime value calculations. This data is sensitive.",
+        "loss": 0.000724468263797462,
+        "loss_sn": "7.2446826e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29341861605644226
+    },
+    {
+        "content": "Attached are the confidential evaluations of our asset disposals last quarter. Review for accuracy and compliance with our disposal policies.",
+        "loss": 0.0007254585507325828,
+        "loss_sn": "7.2545855e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2992800176143646
+    },
+    {
+        "content": "Attached are the confidential evaluations of our asset disposals last quarter. Review for accuracy and compliance with our disposal policies.",
+        "loss": 0.0007254585507325828,
+        "loss_sn": "7.2545855e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2992800176143646
+    },
+    {
+        "content": "Attached you will find the confidential client list updated last Friday. Please use it to prepare the personalized outreach emails.",
+        "loss": 0.0007257858524098992,
+        "loss_sn": "7.2578585e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.17494536936283112
+    },
+    {
+        "content": "The detailed financial models for our proposed expansion into South America are attached. Review and note any major financial risks.",
+        "loss": 0.0007337401038967073,
+        "loss_sn": "7.3374010e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.27516502141952515
+    },
+    {
+        "content": "Attached is the strategic review document for our capital investments in the biotech sector. Please provide your feedback on the risk assessments.",
+        "loss": 0.0007337976130656898,
+        "loss_sn": "7.3379761e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.295845091342926
+    },
+    {
+        "content": "Attached are the details of the private equity fund we are considering investing in. Evaluate its performance metrics carefully.",
+        "loss": 0.0007343319011852145,
+        "loss_sn": "7.3433190e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.24160252511501312
+    },
+    {
+        "content": "Confidential: The executive summary of our market exit strategy for underperforming regions is attached. Review before the strategic planning session.",
+        "loss": 0.0007372655672952533,
+        "loss_sn": "7.3726557e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2988513112068176
+    },
+    {
+        "content": "Confidential: Please examine the attached cap table adjustment proposals before they are discussed in the board meeting.",
+        "loss": 0.0007372902473434806,
+        "loss_sn": "7.3729025e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.30917447805404663
+    },
+    {
+        "content": "Confidential: The risk assessment report for our new product line is attached. Review the market risks and production challenges.",
+        "loss": 0.0007453003781847656,
+        "loss_sn": "7.4530038e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.22750410437583923
+    },
+    {
+        "content": "Please review the confidential budget reallocation proposal for the next fiscal year before the finance committee meeting.",
+        "loss": 0.0007495844038203359,
+        "loss_sn": "7.4958440e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2233383059501648
+    },
+    {
+        "content": "I've attached the patent application details for our latest invention. It is crucial that these documents remain secure until the official filing.",
+        "loss": 0.0007519711507484317,
+        "loss_sn": "7.5197115e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.26432958245277405
+    },
+    {
+        "content": "For your preparation: Attached are the profit margin analyses segmented by product lines. This is sensitive operational data.",
+        "loss": 0.000753335771150887,
+        "loss_sn": "7.5333577e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2912464737892151
+    },
+    {
+        "content": "For your preparation: Attached are the investment analysis and projections for our new health tech division. This information is highly confidential.",
+        "loss": 0.0007592367473989725,
+        "loss_sn": "7.5923675e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.26395049691200256
+    },
+    {
+        "content": "For your eyes only: Attached is our detailed analysis of market trends and consumer behavior for the next quarter. It includes confidential sales forecasts.",
+        "loss": 0.0007607458392158151,
+        "loss_sn": "7.6074584e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.15988366305828094
+    },
+    {
+        "content": "Confidential: The bonus structure revisions for our sales team are detailed in the attached document. Review and prepare for the compensation committee meeting.",
+        "loss": 0.0007607684237882495,
+        "loss_sn": "7.6076842e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3131052255630493
+    },
+    {
+        "content": "For internal use only: Please review the attached detailed reports on our customer retention strategies. This is sensitive marketing information.",
+        "loss": 0.0007645246805623174,
+        "loss_sn": "7.6452468e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2830381691455841
+    },
+    {
+        "content": "The financial implications of our proposed divestiture in the automotive sector are detailed in the attached report. Review and note any major financial risks.",
+        "loss": 0.0007810872048139572,
+        "loss_sn": "7.8108720e-04",
+        "ae_class": "high value",
+        "cosine_class": "high value",
+        "content_score": 0.43475332856178284
+    },
+    {
+        "content": "The strategy document for our expansion into the Asian market is attached. Review the market analysis and investment plan sections carefully.",
+        "loss": 0.0007908211555331945,
+        "loss_sn": "7.9082116e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.280174195766449
+    },
+    {
+        "content": "Please review the confidential project charter for Project Orion before our kickoff meeting next Monday.",
+        "loss": 0.0007940257783047855,
+        "loss_sn": "7.9402578e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29925012588500977
+    },
+    {
+        "content": "Attached are the preliminary findings of our internal investigation into the leaked product specs. Handle this information with utmost care.",
+        "loss": 0.0008001842070370913,
+        "loss_sn": "8.0018421e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2776395380496979
+    },
+    {
+        "content": "Please verify the data in the attached sales forecast report before it is shared with the stakeholder committee next Wednesday.",
+        "loss": 0.0008017229265533388,
+        "loss_sn": "8.0172293e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.26406896114349365
+    },
+    {
+        "content": "The internal forecast for next quarter's revenue streams is attached. Review and prepare your department's adjustments based on these projections.",
+        "loss": 0.0008041104301810265,
+        "loss_sn": "8.0411043e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3555474877357483
+    },
+    {
+        "content": "Please examine the attached cap table adjustment proposals before they are discussed in the board meeting.",
+        "loss": 0.0008070728508755565,
+        "loss_sn": "8.0707285e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2635834813117981
+    },
+    {
+        "content": "Please verify the calculations in the attached cost-efficiency report for our manufacturing processes. This will be discussed in our next operational review meeting.",
+        "loss": 0.0008086831076070666,
+        "loss_sn": "8.0868311e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.27333250641822815
+    },
+    {
+        "content": "Please examine the attached strategic recommendations for improving our customer service ratings. This information is confidential and intended for managerial review only.",
+        "loss": 0.0008130555506795645,
+        "loss_sn": "8.1305555e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2872377336025238
+    },
+    {
+        "content": "Attached are the initial sketches and functional specifications for our next-gen product line. Ensure all data remains under strict confidentiality until the public unveiling.",
+        "loss": 0.0008164249593392015,
+        "loss_sn": "8.1642496e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2082148790359497
+    },
+    {
+        "content": "For immediate review: Please assess the attached operational risk assessments for our manufacturing facilities. This includes environmental and safety risks.",
+        "loss": 0.0008166155312210321,
+        "loss_sn": "8.1661553e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2176777571439743
+    },
+    {
+        "content": "For your eyes only: Attached is the analysis of our financial exposure due to recent currency fluctuations. It includes risk mitigation strategies.",
+        "loss": 0.0008212714456021786,
+        "loss_sn": "8.2127145e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.32898736000061035
+    },
+    {
+        "content": "For internal use only: Attached are the risk assessment reports for our overseas operations. Focus on the currency risk section.",
+        "loss": 0.0008213934488594532,
+        "loss_sn": "8.2139345e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.28787392377853394
+    },
+    {
+        "content": "The business impact analysis for our proposed market exit from South-East Asia is attached. Review and prepare your feedback for the strategy meeting.",
+        "loss": 0.000825048831757158,
+        "loss_sn": "8.2504883e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3045196533203125
+    },
+    {
+        "content": "Please assess the financial viability of our proposed expansion into the Middle Eastern market, detailed in the attached report.",
+        "loss": 0.0008260763715952635,
+        "loss_sn": "8.2607637e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.25783878564834595
+    },
+    {
+        "content": "For immediate review: Please assess the attached breakdown of the legal fees spent in Q1 and their justification.",
+        "loss": 0.000833687256090343,
+        "loss_sn": "8.3368726e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.35327333211898804
+    },
+    {
+        "content": "For immediate review: Please assess the attached breakdown of the legal fees spent in Q1 and their justification.",
+        "loss": 0.000833687256090343,
+        "loss_sn": "8.3368726e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.35327333211898804
+    },
+    {
+        "content": "Confidential: Attached are our plans for addressing the recent public relations crisis. Review the communication strategy and stakeholder responses.",
+        "loss": 0.0008415107149630785,
+        "loss_sn": "8.4151071e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2530336380004883
+    },
+    {
+        "content": "For internal planning only: Please review the attached business continuity plans focusing on financial risk management.",
+        "loss": 0.0008542632567696273,
+        "loss_sn": "8.5426326e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.35127368569374084
+    },
+    {
+        "content": "Please verify the assumptions used in the attached risk models before we integrate them into our financial planning system.",
+        "loss": 0.0008573348168283701,
+        "loss_sn": "8.5733482e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.28308922052383423
+    },
+    {
+        "content": "Confidential assessment of our logistics and supply chain vulnerabilities is attached. Review the recommendations for fortifying our operations.",
+        "loss": 0.0008578870911151171,
+        "loss_sn": "8.5788709e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29516637325286865
+    },
+    {
+        "content": "Please find attached the internal revenue forecasts for the next fiscal year, broken down by department. Confidentially review before the budget meeting.",
+        "loss": 0.0008608861826360226,
+        "loss_sn": "8.6088618e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.23321089148521423
+    },
+    {
+        "content": "The server migration plan is attached. Review the security protocols and ensure all data handling is up to compliance standards.",
+        "loss": 0.0008698944002389908,
+        "loss_sn": "8.6989440e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.34862929582595825
+    },
+    {
+        "content": "The confidential briefing on our strategic investment in Blockchain technology is attached. Review the market potential and technology integration plans.",
+        "loss": 0.0008744150400161743,
+        "loss_sn": "8.7441504e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3028485178947449
+    },
+    {
+        "content": "For your preparation: Attached are the financial justifications for the proposed cuts in R&D spending. This information is sensitive and must be handled discreetly.",
+        "loss": 0.0008794766617938876,
+        "loss_sn": "8.7947666e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2946772277355194
+    },
+    {
+        "content": "For internal use only: Please review the attached detailed reports on our customer segmentation analytics. This is sensitive market intelligence.",
+        "loss": 0.0008847165736369789,
+        "loss_sn": "8.8471657e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2709744870662689
+    },
+    {
+        "content": "The budget reallocation proposal for Q3 is attached. It includes significant shifts in funding between departments.",
+        "loss": 0.0008929028990678489,
+        "loss_sn": "8.9290290e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.21832650899887085
+    },
+    {
+        "content": "The budget reallocation proposal for Q3 is attached. It includes significant shifts in funding between departments.",
+        "loss": 0.0008929028990678489,
+        "loss_sn": "8.9290290e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.21832650899887085
+    },
+    {
+        "content": "For your review: Attached are the detailed analytics on our customer churn rates and their financial impact. Please keep this information confidential.",
+        "loss": 0.0008980768616311252,
+        "loss_sn": "8.9807686e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2996659576892853
+    },
+    {
+        "content": "Please review the attached action plans for the crisis management strategy regarding recent data breaches. This information is critical for our response team.",
+        "loss": 0.0009006165782921016,
+        "loss_sn": "9.0061658e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.21586105227470398
+    },
+    {
+        "content": "The internal audit report on our cloud infrastructure costs is attached. Please review the expenditures and ROI detailed in the report.",
+        "loss": 0.0009053907706402242,
+        "loss_sn": "9.0539077e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3277682065963745
+    },
+    {
+        "content": "The internal audit report on our cloud infrastructure costs is attached. Please review the expenditures and ROI detailed in the report.",
+        "loss": 0.0009053907706402242,
+        "loss_sn": "9.0539077e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3277682065963745
+    },
+    {
+        "content": "Please examine the attached detailed analysis of our energy consumption and sustainability efforts. This is critical for our upcoming green certification.",
+        "loss": 0.0009084333432838321,
+        "loss_sn": "9.0843334e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.16123181581497192
+    },
+    {
+        "content": "The strategy document for our cost-cutting measures across all departments is attached. Review and prepare for the implementation discussions.",
+        "loss": 0.0009413377847522497,
+        "loss_sn": "9.4133778e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.23879604041576385
+    },
+    {
+        "content": "The performance metrics and review summaries for our pilot product launch are attached. Please keep this information confidential and prepare for the review meeting.",
+        "loss": 0.0009414273081347346,
+        "loss_sn": "9.4142731e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.19603045284748077
+    },
+    {
+        "content": "Please examine the attached operational review reports for our logistics operations. These include sensitive performance metrics and improvement proposals.",
+        "loss": 0.0009414732339791954,
+        "loss_sn": "9.4147323e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.3319970369338989
+    },
+    {
+        "content": "For internal planning only: Please review the attached impact analysis for the proposed office relocation.",
+        "loss": 0.0009550635586492717,
+        "loss_sn": "9.5506356e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.2253188043832779
+    },
+    {
+        "content": "Confidential assessment of project investment returns for Project Titan is attached. Review the ROI calculations in detail.",
+        "loss": 0.0009567009983584285,
+        "loss_sn": "9.5670100e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.18710318207740784
+    },
+    {
+        "content": "I have attached the project debrief for our failed marketing campaign. Analyze the feedback and prepare a recovery strategy.",
+        "loss": 0.0009647593833506107,
+        "loss_sn": "9.6475938e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.24735766649246216
+    },
+    {
+        "content": "For your eyes only: Attached is a breakdown of our proprietary algorithm enhancements. We need to discuss the deployment schedule confidentially.",
+        "loss": 0.0009650991996750236,
+        "loss_sn": "9.6509920e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.18627941608428955
+    },
+    {
+        "content": "The strategy outline for our digital marketing campaign targeting new demographics is attached. Review the tactics and budget allocations.",
+        "loss": 0.000988498330116272,
+        "loss_sn": "9.8849833e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.1332264244556427
+    },
+    {
+        "content": "The project timelines and detailed R&D reports for Project Falcon are attached. Ensure all data remains classified until the public release.",
+        "loss": 0.001089670229703188,
+        "loss_sn": "1.0896702e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.1379242241382599
+    }
+]

@@ -1,5 +1,4 @@
 import json
-import logging
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import torch
@@ -55,10 +54,10 @@ class EmbeddingModel:
         val_dataset = TensorDataset(torch.tensor(test_embeddings, dtype=torch.float32))
         return train_dataset, val_dataset
     
-    def test_ae_classificaton_load_set(self, csv_path, sample_amount, seen_samples, unseen=None) -> tuple:
+    def test_ae_classificaton_load_set(self, csv_path, sample_amount, seen_samples, start_seed, unseen=None) -> tuple:
         if unseen is None or unseen.empty:
             df = self.loader_email.load_csv_to_df(csv_path) 
-            seen = df.sample(n=seen_samples, random_state=32)
+            seen = df.sample(n=seen_samples, random_state=start_seed)
             unseen = df.drop(seen.index)
             df_sample = unseen.sample(n=sample_amount)
         else:
@@ -67,7 +66,6 @@ class EmbeddingModel:
         contents = []
         embeddings = []
         content_score_list = []
-
         for _, row in df_sample.iterrows():
             email_content = row[1]
             content = self.proc_data.clean_email_content(email_content)
@@ -85,12 +83,8 @@ class EmbeddingModel:
         embeddings_tensor = torch.stack(embeddings)
         return contents, embeddings_tensor, content_score_list, unseen
     
-
-
     def gpt_test_ae_classificaton_load_set(self, csv_path) -> tuple:
-
         df = pd.read_csv(csv_path, header=None, names=['email_content'])
-
         contents = []
         embeddings = []
         content_score_list = []

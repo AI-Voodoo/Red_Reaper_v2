@@ -1,0 +1,1394 @@
+[
+    {
+        "content": "Reminder: Your quarterly performance reviews are due next week.",
+        "loss": 0.0005995603278279305,
+        "loss_sn": "5.9956033e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.29815781116485596
+    },
+    {
+        "content": "Reminder: The annual employee survey is due by the end of this week.",
+        "loss": 0.0006425750907510519,
+        "loss_sn": "6.4257509e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.28071677684783936
+    },
+    {
+        "content": "Reminder: Please complete the team feedback form by next Wednesday.",
+        "loss": 0.0008659344166517258,
+        "loss_sn": "8.6593442e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.1761840581893921
+    },
+    {
+        "content": "Reminder: The employee art show submissions are due by the end of this week.",
+        "loss": 0.000881967309396714,
+        "loss_sn": "8.8196731e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.20067666471004486
+    },
+    {
+        "content": "Reminder: The office will be closed next Monday for the holiday.",
+        "loss": 0.0009273022878915071,
+        "loss_sn": "9.2730229e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.16542336344718933
+    },
+    {
+        "content": "Reminder: The office will be closed for maintenance next Wednesday.",
+        "loss": 0.0009412267245352268,
+        "loss_sn": "9.4122672e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.15735340118408203
+    },
+    {
+        "content": "Reminder: The deadline to submit your ideas for the office redesign is tomorrow.",
+        "loss": 0.0009432616061531007,
+        "loss_sn": "9.4326161e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.17459028959274292
+    },
+    {
+        "content": "Quick update: The annual health check-up has been postponed to next month.",
+        "loss": 0.0009681545197963715,
+        "loss_sn": "9.6815452e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.09069420397281647
+    },
+    {
+        "content": "Reminder: The health and safety training is mandatory and will be this Friday morning.",
+        "loss": 0.0009822254069149494,
+        "loss_sn": "9.8222541e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.15968725085258484
+    },
+    {
+        "content": "Does anyone want to exchange weekend shifts? I need to switch for a family event.",
+        "loss": 0.000985833234153688,
+        "loss_sn": "9.8583323e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.1425899863243103
+    },
+    {
+        "content": "Who's going to the annual sales conference next month? We should coordinate travel.",
+        "loss": 0.0009931048844009638,
+        "loss_sn": "9.9310488e-04",
+        "ae_class": "high value",
+        "cosine_class": "low value",
+        "content_score": 0.05563252419233322
+    },
+    {
+        "content": "Is anyone good with spreadsheets? I could use a little help with formulas.",
+        "loss": 0.0010107705602422357,
+        "loss_sn": "1.0107706e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.14374184608459473
+    },
+    {
+        "content": "Reminder: Please update your emergency contact information by next week.",
+        "loss": 0.0010112668387591839,
+        "loss_sn": "1.0112668e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.056572601199150085
+    },
+    {
+        "content": "Can anyone lend me a notebook? I forgot mine and have a meeting in 10 minutes.",
+        "loss": 0.0010176479117944837,
+        "loss_sn": "1.0176479e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.06550508737564087
+    },
+    {
+        "content": "Reminder: The company picnic is rescheduled to next Saturday due to weather.",
+        "loss": 0.0010228105820715427,
+        "loss_sn": "1.0228106e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.078607939183712
+    },
+    {
+        "content": "FYI, the company is offering discount tickets to the local museum for all employees.",
+        "loss": 0.0010500006610527635,
+        "loss_sn": "1.0500007e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.13815638422966003
+    },
+    {
+        "content": "Reminder: Don\u2019t forget to log your volunteer hours in the system by Friday.",
+        "loss": 0.0010547405108809471,
+        "loss_sn": "1.0547405e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.13608524203300476
+    },
+    {
+        "content": "Reminder: The community service hours log is due by the end of the month.",
+        "loss": 0.0010553339961916208,
+        "loss_sn": "1.0553340e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.14063766598701477
+    },
+    {
+        "content": "Lost a notepad during yesterday's meetings. It\u2019s red and has 'CONFIDENTIAL' on the cover.",
+        "loss": 0.0010558913927525282,
+        "loss_sn": "1.0558914e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.10303756594657898
+    },
+    {
+        "content": "Reminder: Friday is the last day to submit your vacation requests for the year.",
+        "loss": 0.0010839254828169942,
+        "loss_sn": "1.0839255e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07469971477985382
+    },
+    {
+        "content": "Looking for someone to swap shifts with me next Friday. Anyone available?",
+        "loss": 0.0010897284373641014,
+        "loss_sn": "1.0897284e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.11878788471221924
+    },
+    {
+        "content": "Reminder: The carpool sign-up sheet is at the front desk. Please add your route if you're interested.",
+        "loss": 0.0010943599045276642,
+        "loss_sn": "1.0943599e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.060068532824516296
+    },
+    {
+        "content": "Quick heads up: they\u2019re testing the fire alarms at noon today.",
+        "loss": 0.0011087153106927872,
+        "loss_sn": "1.1087153e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07901334017515182
+    },
+    {
+        "content": "Just a note, I\u2019ll be out of the office tomorrow morning for a doctor\u2019s appointment.",
+        "loss": 0.0011107949540019035,
+        "loss_sn": "1.1107950e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.12171990424394608
+    },
+    {
+        "content": "FYI, the maintenance crew will be inspecting the elevators all next week.",
+        "loss": 0.0011122121941298246,
+        "loss_sn": "1.1122122e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.15467897057533264
+    },
+    {
+        "content": "Has anyone ordered office supplies recently? We're out of sticky notes.",
+        "loss": 0.0011242369655519724,
+        "loss_sn": "1.1242370e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0900319367647171
+    },
+    {
+        "content": "Reminder: The deadline to sign up for the volunteer day at the local park is coming up.",
+        "loss": 0.0011251273099333048,
+        "loss_sn": "1.1251273e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.02083147130906582
+    },
+    {
+        "content": "Hey, the second printer is jamming again. Just a heads up before you print.",
+        "loss": 0.0011313663562759757,
+        "loss_sn": "1.1313664e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.12652002274990082
+    },
+    {
+        "content": "Looking for feedback on the new email system. How\u2019s it working for everyone?",
+        "loss": 0.0011336207389831543,
+        "loss_sn": "1.1336207e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.1459263563156128
+    },
+    {
+        "content": "Reminder: The fire drill will take place tomorrow at 3 PM. Please be prepared.",
+        "loss": 0.0011678460286930203,
+        "loss_sn": "1.1678460e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0764547735452652
+    },
+    {
+        "content": "FYI, there\u2019s a tech meetup this weekend focusing on AI. Might be interesting!",
+        "loss": 0.0011690878309309483,
+        "loss_sn": "1.1690878e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.10454463958740234
+    },
+    {
+        "content": "FYI, the parking lot will be repaved next week. Expect some disruptions.",
+        "loss": 0.0011768029071390629,
+        "loss_sn": "1.1768029e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07114525139331818
+    },
+    {
+        "content": "Reminder to all, please clean up your workstations before leaving tonight.",
+        "loss": 0.0011919960379600525,
+        "loss_sn": "1.1919960e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.12441816926002502
+    },
+    {
+        "content": "Hey, the printer on the second floor is out of toner. Just a heads up!",
+        "loss": 0.0011927185114473104,
+        "loss_sn": "1.1927185e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.09876126050949097
+    },
+    {
+        "content": "Lost my earring somewhere between my desk and the conference room, please keep an eye out!",
+        "loss": 0.0012004657182842493,
+        "loss_sn": "1.2004657e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.08641690015792847
+    },
+    {
+        "content": "Lost a folder with important personal documents. If found, please return ASAP.",
+        "loss": 0.0012269378639757633,
+        "loss_sn": "1.2269379e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.10013481229543686
+    },
+    {
+        "content": "Who's interested in forming a gardening club? I\u2019ve got some ideas for the office terrace.",
+        "loss": 0.0012323965784162283,
+        "loss_sn": "1.2323966e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.02562279812991619
+    },
+    {
+        "content": "Can someone help me proofread an email in French? I\u2019m still learning.",
+        "loss": 0.0012343457201495767,
+        "loss_sn": "1.2343457e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.11347394436597824
+    },
+    {
+        "content": "Reminder: Please keep the noise down near the cubicles. Thanks!",
+        "loss": 0.001236487296409905,
+        "loss_sn": "1.2364873e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.12244100123643875
+    },
+    {
+        "content": "Reminder: Please label your food in the fridge. We had another mix-up today.",
+        "loss": 0.0012384619330987334,
+        "loss_sn": "1.2384619e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.09279301017522812
+    },
+    {
+        "content": "FYI, there\u2019s a discount on gym memberships for all employees this month.",
+        "loss": 0.0012401225976645947,
+        "loss_sn": "1.2401226e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.1339195966720581
+    },
+    {
+        "content": "FYI, they\u2019re offering a CPR certification course next month in the auditorium.",
+        "loss": 0.001252942718565464,
+        "loss_sn": "1.2529427e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04216399043798447
+    },
+    {
+        "content": "Happy Birthday to Jane! Don't forget to sign the card by her desk.",
+        "loss": 0.0012611523270606995,
+        "loss_sn": "1.2611523e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07628510892391205
+    },
+    {
+        "content": "Who's interested in a chess tournament right here in the office? Thinking of organizing one.",
+        "loss": 0.001262818230316043,
+        "loss_sn": "1.2628182e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07556368410587311
+    },
+    {
+        "content": "Reminder: The deadline to sign up for the office baking contest is this Wednesday.",
+        "loss": 0.001263919286429882,
+        "loss_sn": "1.2639193e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.057888213545084
+    },
+    {
+        "content": "Reminder: Tomorrow is the deadline for the photo contest submissions.",
+        "loss": 0.0012689819559454918,
+        "loss_sn": "1.2689820e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.007145605981349945
+    },
+    {
+        "content": "Looking for someone who\u2019s good at DIY projects. Need some help with a home repair.",
+        "loss": 0.001281066332012415,
+        "loss_sn": "1.2810663e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04361733794212341
+    },
+    {
+        "content": "Anyone interested in a swap day? Bring items you don't need and swap with others.",
+        "loss": 0.0012978442246094346,
+        "loss_sn": "1.2978442e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04822477698326111
+    },
+    {
+        "content": "Who\u2019s interested in joining the office soccer team? We need a few more players.",
+        "loss": 0.0013019796460866928,
+        "loss_sn": "1.3019796e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.053247518837451935
+    },
+    {
+        "content": "Hey, the coffee machine is finally fixed. Just in time for the afternoon slump!",
+        "loss": 0.0013061694335192442,
+        "loss_sn": "1.3061694e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.049982957541942596
+    },
+    {
+        "content": "Reminder: Bring your photos for the 'Guess Who?' game at tomorrow\u2019s team building event.",
+        "loss": 0.001313619315624237,
+        "loss_sn": "1.3136193e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.015668511390686035
+    },
+    {
+        "content": "Reminder: Please return any library books you borrowed from the break room.",
+        "loss": 0.0013140728697180748,
+        "loss_sn": "1.3140729e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07815681397914886
+    },
+    {
+        "content": "FYI, they\u2019re repainting the parking lines this weekend.",
+        "loss": 0.001314349239692092,
+        "loss_sn": "1.3143492e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04350530728697777
+    },
+    {
+        "content": "FYI, they\u2019re giving away leftover sandwiches from the meeting on the third floor.",
+        "loss": 0.001314437249675393,
+        "loss_sn": "1.3144372e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0342489518225193
+    },
+    {
+        "content": "Reminder: The parking lot will be cleaned tomorrow, park on the street if you arrive late.",
+        "loss": 0.0013155450578778982,
+        "loss_sn": "1.3155451e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0509314201772213
+    },
+    {
+        "content": "Hey, who's up for coffee at the break? I'm heading down in five.",
+        "loss": 0.0013168285368010402,
+        "loss_sn": "1.3168285e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.010205084457993507
+    },
+    {
+        "content": "Don't forget, tomorrow is 'Bring Your Kids to Work' day!",
+        "loss": 0.001317094312980771,
+        "loss_sn": "1.3170943e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.09621137380599976
+    },
+    {
+        "content": "FYI, the microwave in the lunchroom is out of order until further notice.",
+        "loss": 0.001323202857747674,
+        "loss_sn": "1.3232029e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.08300521969795227
+    },
+    {
+        "content": "Who\u2019s interested in a lunchtime discussion about the best vacation spots?",
+        "loss": 0.0013299686834216118,
+        "loss_sn": "1.3299687e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0020137205719947815
+    },
+    {
+        "content": "Lost a set of keys with a rubber duck keychain. If found, please return.",
+        "loss": 0.00133215868845582,
+        "loss_sn": "1.3321587e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0004838518798351288
+    },
+    {
+        "content": "Who's interested in forming a book club? Thinking of starting one here at the office.",
+        "loss": 0.0013334383256733418,
+        "loss_sn": "1.3334383e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.06665179133415222
+    },
+    {
+        "content": "Just a quick note: The water dispenser bottle needs changing if anyone\u2019s up for it.",
+        "loss": 0.0013360558077692986,
+        "loss_sn": "1.3360558e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0840005949139595
+    },
+    {
+        "content": "FYI, the local library is looking for volunteers for their summer reading program.",
+        "loss": 0.0013540273066610098,
+        "loss_sn": "1.3540273e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.00927720032632351
+    },
+    {
+        "content": "Who's interested in a DIY craft workshop? Thinking of hosting one next month.",
+        "loss": 0.00136090989690274,
+        "loss_sn": "1.3609099e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0006226710975170135
+    },
+    {
+        "content": "Looking for a partner for the upcoming charity run. Anyone interested in teaming up?",
+        "loss": 0.001361181028187275,
+        "loss_sn": "1.3611810e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.037104614078998566
+    },
+    {
+        "content": "FYI, there\u2019s a new art exhibit at the community center this weekend.",
+        "loss": 0.001361270435154438,
+        "loss_sn": "1.3612704e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.051594287157058716
+    },
+    {
+        "content": "Anyone know where the extra office supplies are stored? I need some binder clips.",
+        "loss": 0.0013691559433937073,
+        "loss_sn": "1.3691559e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.1199541687965393
+    },
+    {
+        "content": "FYI, the art class in the community center has a couple of spots left.",
+        "loss": 0.0013726921752095222,
+        "loss_sn": "1.3726922e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.030554939061403275
+    },
+    {
+        "content": "Who wants to start a book exchange? Bring a book you're finished with and swap!",
+        "loss": 0.0013739265268668532,
+        "loss_sn": "1.3739265e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.06237254664301872
+    },
+    {
+        "content": "Hey, the food truck with amazing tacos will be outside today around noon.",
+        "loss": 0.001377758919261396,
+        "loss_sn": "1.3777589e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0051985252648591995
+    },
+    {
+        "content": "Who's interested in a ping pong tournament? Thinking about organizing one next month.",
+        "loss": 0.0013779602013528347,
+        "loss_sn": "1.3779602e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.024066250771284103
+    },
+    {
+        "content": "Who wants to help decorate the office for the holidays next week?",
+        "loss": 0.0013782854657620192,
+        "loss_sn": "1.3782855e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.030230050906538963
+    },
+    {
+        "content": "Who left a phone charger plugged in the meeting room? It\u2019s still there.",
+        "loss": 0.0013828957453370094,
+        "loss_sn": "1.3828957e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.13995029032230377
+    },
+    {
+        "content": "Does anyone want to carpool to the office picnic next month? I have four spots in my car.",
+        "loss": 0.0013829076196998358,
+        "loss_sn": "1.3829076e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.03387261554598808
+    },
+    {
+        "content": "Looking for a few volunteers for our community clean-up day next Saturday.",
+        "loss": 0.0013911215355619788,
+        "loss_sn": "1.3911215e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.046196259558200836
+    },
+    {
+        "content": "Who's interested in joining a group to learn sign language together?",
+        "loss": 0.0013947112020105124,
+        "loss_sn": "1.3947112e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.03210105001926422
+    },
+    {
+        "content": "Can someone help me set up the new software? I'm a bit lost with the settings.",
+        "loss": 0.0013960239011794329,
+        "loss_sn": "1.3960239e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.13538700342178345
+    },
+    {
+        "content": "Who wants to join the weekly after-work run around the park? All fitness levels welcome.",
+        "loss": 0.001398739404976368,
+        "loss_sn": "1.3987394e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0027807801961898804
+    },
+    {
+        "content": "Hey, who's taking care of the office plant by the window? It looks thirsty.",
+        "loss": 0.001404845854267478,
+        "loss_sn": "1.4048459e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.003863722085952759
+    },
+    {
+        "content": "Hey, they've just installed a new game in the break room. Check it out!",
+        "loss": 0.001415418810211122,
+        "loss_sn": "1.4154188e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.06439530849456787
+    },
+    {
+        "content": "FYI, there\u2019s a new documentary series on nature conservation starting tonight on TV.",
+        "loss": 0.001416027545928955,
+        "loss_sn": "1.4160275e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.07384791970252991
+    },
+    {
+        "content": "Just a heads up, avoid the main entrance tomorrow, they'll be filming something.",
+        "loss": 0.0014237802242860198,
+        "loss_sn": "1.4237802e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04449265077710152
+    },
+    {
+        "content": "FYI, they've opened a new dog park nearby. Might be fun for pet owners!",
+        "loss": 0.001423870213329792,
+        "loss_sn": "1.4238702e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.039122387766838074
+    },
+    {
+        "content": "Don't forget, casual dress tomorrow for our team fundraising event!",
+        "loss": 0.001424970105290413,
+        "loss_sn": "1.4249701e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.09014862030744553
+    },
+    {
+        "content": "Who\u2019s interested in starting a walking group during lunch breaks?",
+        "loss": 0.0014250229578465223,
+        "loss_sn": "1.4250230e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.016890408471226692
+    },
+    {
+        "content": "Lost a silver earring yesterday, possibly near the mailroom. If found, please let me know.",
+        "loss": 0.0014318310422822833,
+        "loss_sn": "1.4318310e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.05384502559900284
+    },
+    {
+        "content": "Lost a notebook in the training room, it\u2019s black with a red elastic band.",
+        "loss": 0.0014348335098475218,
+        "loss_sn": "1.4348335e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.05689014494419098
+    },
+    {
+        "content": "Has anyone found a blue water bottle? I think I left it in the conference room.",
+        "loss": 0.0014355021994560957,
+        "loss_sn": "1.4355022e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0057289088144898415
+    },
+    {
+        "content": "FYI, there\u2019s a jazz concert this evening at the park. Anyone want to go?",
+        "loss": 0.0014355715829879045,
+        "loss_sn": "1.4355716e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.03097936511039734
+    },
+    {
+        "content": "FYI, the library is having a book sale this weekend. Great deals on books!",
+        "loss": 0.0014376603066921234,
+        "loss_sn": "1.4376603e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04083532840013504
+    },
+    {
+        "content": "Who\u2019s interested in a group outing to the bowling alley this weekend?",
+        "loss": 0.001439741812646389,
+        "loss_sn": "1.4397418e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.008437169715762138
+    },
+    {
+        "content": "Does anyone want to join me at the farmers market after work? I'm heading there for some fresh produce.",
+        "loss": 0.0014412020100280643,
+        "loss_sn": "1.4412020e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.006793591193854809
+    },
+    {
+        "content": "FYI, the rooftop garden is open for anyone who wants a nice spot for lunch.",
+        "loss": 0.0014433622127398849,
+        "loss_sn": "1.4433622e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.003920517861843109
+    },
+    {
+        "content": "Who wants to join a meditation group? Planning to meet twice a week in the quiet room.",
+        "loss": 0.001443625194951892,
+        "loss_sn": "1.4436252e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.014898732304573059
+    },
+    {
+        "content": "Can someone recommend a good mechanic nearby? Need to check my brakes.",
+        "loss": 0.0014523621648550034,
+        "loss_sn": "1.4523622e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.06009751930832863
+    },
+    {
+        "content": "Who's interested in volunteering at the food bank this Saturday?",
+        "loss": 0.001452408148907125,
+        "loss_sn": "1.4524081e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.028447315096855164
+    },
+    {
+        "content": "Lost a book in the break room last week, 'Pride and Prejudice'. Has anyone seen it?",
+        "loss": 0.0014573074877262115,
+        "loss_sn": "1.4573075e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.024180378764867783
+    },
+    {
+        "content": "Lost a USB drive in the conference room. It\u2019s blue and has my initials on it.",
+        "loss": 0.0014586638426408172,
+        "loss_sn": "1.4586638e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.05014956742525101
+    },
+    {
+        "content": "Who\u2019s up for starting a weekly cooking club? We could try new recipes together.",
+        "loss": 0.0014614376705139875,
+        "loss_sn": "1.4614377e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.023107584565877914
+    },
+    {
+        "content": "Is anyone interested in joining the fantasy football league this year? Let me know!",
+        "loss": 0.0014657278079539537,
+        "loss_sn": "1.4657278e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.02751406468451023
+    },
+    {
+        "content": "FYI, there\u2019s a new craft beer pub that opened downtown. Might be worth checking out.",
+        "loss": 0.0014738950412720442,
+        "loss_sn": "1.4738950e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.00853295624256134
+    },
+    {
+        "content": "Who\u2019s interested in a quick game of ping pong during the afternoon break?",
+        "loss": 0.001479429192841053,
+        "loss_sn": "1.4794292e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0018518473953008652
+    },
+    {
+        "content": "FYI, the community center is offering free dance classes this month.",
+        "loss": 0.0014842315576970577,
+        "loss_sn": "1.4842316e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0011158399283885956
+    },
+    {
+        "content": "FYI, the local animal shelter is hosting an adoption event this Saturday.",
+        "loss": 0.0014876177301630378,
+        "loss_sn": "1.4876177e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.021457485854625702
+    },
+    {
+        "content": "Trivia night this Thursday at the pub next door. Join us for some fun!",
+        "loss": 0.0014897298533469439,
+        "loss_sn": "1.4897299e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.00016035139560699463
+    },
+    {
+        "content": "Is it just me, or is the A/C really cranked up today? I'm freezing!",
+        "loss": 0.00150399561971426,
+        "loss_sn": "1.5039956e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.010583313181996346
+    },
+    {
+        "content": "Just saw that the next movie night will feature 'The Matrix'! Who\u2019s coming?",
+        "loss": 0.0015040183207020164,
+        "loss_sn": "1.5040183e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.03997737541794777
+    },
+    {
+        "content": "Who's up for karaoke this Friday night? It\u2019s been too long!",
+        "loss": 0.001507897861301899,
+        "loss_sn": "1.5078979e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.012126881629228592
+    },
+    {
+        "content": "Hey, if anyone is interested in learning knitting, I\u2019m starting a group this week.",
+        "loss": 0.0015104024205356836,
+        "loss_sn": "1.5104024e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0013365857303142548
+    },
+    {
+        "content": "Don't forget to shut down your computers and turn off the lights before leaving tonight!",
+        "loss": 0.0015162363415583968,
+        "loss_sn": "1.5162363e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.003081284463405609
+    },
+    {
+        "content": "Who's up for starting a fantasy basketball league? Season starts soon!",
+        "loss": 0.0015168457757681608,
+        "loss_sn": "1.5168458e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.03165394812822342
+    },
+    {
+        "content": "Is anyone else watching the new cooking show on channel 5? Would love to discuss the recipes!",
+        "loss": 0.0015303401742130518,
+        "loss_sn": "1.5303402e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.005713040009140968
+    },
+    {
+        "content": "Has anyone seen the projector remote? It's missing again.",
+        "loss": 0.0015327025903388858,
+        "loss_sn": "1.5327026e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.038721825927495956
+    },
+    {
+        "content": "Does anyone have a spare set of earbuds? Mine just broke and I need them for a call.",
+        "loss": 0.0015340702375397086,
+        "loss_sn": "1.5340702e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.036456815898418427
+    },
+    {
+        "content": "If anyone finds a set of keys, please let me know. I think I dropped them near the lobby.",
+        "loss": 0.0015343360137194395,
+        "loss_sn": "1.5343360e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.047343313694000244
+    },
+    {
+        "content": "Does anyone know a good mechanic nearby? My car is making a strange noise.",
+        "loss": 0.001536205760203302,
+        "loss_sn": "1.5362058e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.009625965729355812
+    },
+    {
+        "content": "Reminder: We\u2019re having a potluck next Friday. Don\u2019t forget to bring your favorite dish!",
+        "loss": 0.0015406494494527578,
+        "loss_sn": "1.5406494e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.060255493968725204
+    },
+    {
+        "content": "Does anyone have a good recommendation for a local bakery?",
+        "loss": 0.0015488057397305965,
+        "loss_sn": "1.5488057e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.034068670123815536
+    },
+    {
+        "content": "Can anyone recommend a good dry cleaner in the area?",
+        "loss": 0.0015491112135350704,
+        "loss_sn": "1.5491112e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.0040572527796030045
+    },
+    {
+        "content": "Lost my watch somewhere in the lobby yesterday, it\u2019s silver with a blue face.",
+        "loss": 0.001550288638100028,
+        "loss_sn": "1.5502886e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.00917590782046318
+    },
+    {
+        "content": "Who's up for a trivia challenge about 90s movies? Let's set a date!",
+        "loss": 0.0015525473281741142,
+        "loss_sn": "1.5525473e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.05665839463472366
+    },
+    {
+        "content": "Reminder: There's yoga in the park this Sunday morning, free for all to join.",
+        "loss": 0.0015583911444991827,
+        "loss_sn": "1.5583911e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.01710665225982666
+    },
+    {
+        "content": "Can someone help me with setting up dual monitors? Got a new desk setup.",
+        "loss": 0.0015614747535437346,
+        "loss_sn": "1.5614748e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.04060162603855133
+    },
+    {
+        "content": "FYI, the local theater is having a comedy night tomorrow. Tickets are cheap!",
+        "loss": 0.001565675949677825,
+        "loss_sn": "1.5656759e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.03358322009444237
+    },
+    {
+        "content": "Can someone recommend a good podcast about history or science?",
+        "loss": 0.0015662526711821556,
+        "loss_sn": "1.5662527e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.02757801115512848
+    },
+    {
+        "content": "Can someone lend me a laptop charger? I left mine at home today.",
+        "loss": 0.0015672952868044376,
+        "loss_sn": "1.5672953e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.006706545129418373
+    },
+    {
+        "content": "Who knows a good place nearby for a quick oil change?",
+        "loss": 0.001572002423927188,
+        "loss_sn": "1.5720024e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.015475578606128693
+    },
+    {
+        "content": "Does anyone have a spare mouse? Mine just stopped working.",
+        "loss": 0.0015733432956039906,
+        "loss_sn": "1.5733433e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.04817434772849083
+    },
+    {
+        "content": "Looking for someone who can give me a quick tutorial on using the new coffee maker.",
+        "loss": 0.001575122936628759,
+        "loss_sn": "1.5751229e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.023117033764719963
+    },
+    {
+        "content": "Lost a pair of sunglasses in the lobby yesterday, has anyone seen them?",
+        "loss": 0.0015765759162604809,
+        "loss_sn": "1.5765759e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.016553845256567
+    },
+    {
+        "content": "Lost a scarf in the parking lot yesterday, it\u2019s red and white striped. Please let me know if you see it.",
+        "loss": 0.0015771205071359873,
+        "loss_sn": "1.5771205e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0007727555930614471
+    },
+    {
+        "content": "Who's up for a challenge on the new arcade machine in the break room?",
+        "loss": 0.0015772398328408599,
+        "loss_sn": "1.5772398e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.033165343105793
+    },
+    {
+        "content": "Lost a set of headphones in the gym. If found, please let me know.",
+        "loss": 0.0015776370419189334,
+        "loss_sn": "1.5776370e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.006693791598081589
+    },
+    {
+        "content": "Anyone up for grabbing a smoothie after lunch?",
+        "loss": 0.001587538979947567,
+        "loss_sn": "1.5875390e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.003796245902776718
+    },
+    {
+        "content": "FYI, the local cinema is showing classic films every Tuesday this month.",
+        "loss": 0.0015879867132753134,
+        "loss_sn": "1.5879867e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.027900798246264458
+    },
+    {
+        "content": "Anyone interested in a weekly craft night? It could be a fun way to unwind.",
+        "loss": 0.001591165317222476,
+        "loss_sn": "1.5911653e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.04922015219926834
+    },
+    {
+        "content": "Who else is excited for the upcoming team outing next week?",
+        "loss": 0.0015939282020553946,
+        "loss_sn": "1.5939282e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.006823450326919556
+    },
+    {
+        "content": "Can someone recommend a good place for car repairs? My AC stopped working.",
+        "loss": 0.0015945122577250004,
+        "loss_sn": "1.5945123e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.033626582473516464
+    },
+    {
+        "content": "Who\u2019s interested in a weekend photography outing? Thinking of heading to the nature reserve.",
+        "loss": 0.0015963397454470396,
+        "loss_sn": "1.5963397e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.060951657593250275
+    },
+    {
+        "content": "Does anyone have a recipe for gluten-free cookies? I\u2019d love to try baking some.",
+        "loss": 0.0016025884542614222,
+        "loss_sn": "1.6025885e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.058299317955970764
+    },
+    {
+        "content": "Lost a phone case in the parking garage, it's black with a floral design.",
+        "loss": 0.0016030778642743826,
+        "loss_sn": "1.6030779e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.03774160519242287
+    },
+    {
+        "content": "Who\u2019s up for a challenge to see who can log the most steps this month?",
+        "loss": 0.0016049774130806327,
+        "loss_sn": "1.6049774e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.024305464699864388
+    },
+    {
+        "content": "Lost my lunchbox in the fridge, it\u2019s the one with stickers all over it.",
+        "loss": 0.001607897225767374,
+        "loss_sn": "1.6078972e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.005176503676921129
+    },
+    {
+        "content": "Can someone help me with a computer issue? It\u2019s running really slow.",
+        "loss": 0.0016082131769508123,
+        "loss_sn": "1.6082132e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.05988483875989914
+    },
+    {
+        "content": "Who's in for a board game night this Friday? Bring your favorite games!",
+        "loss": 0.0016133654862642288,
+        "loss_sn": "1.6133655e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.020786352455615997
+    },
+    {
+        "content": "FYI, there\u2019s a food festival in town this weekend. Lots of great eats!",
+        "loss": 0.0016184424748644233,
+        "loss_sn": "1.6184425e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0216439887881279
+    },
+    {
+        "content": "Can someone assist me with the coffee machine? Can\u2019t seem to get it to work.",
+        "loss": 0.001620409544557333,
+        "loss_sn": "1.6204095e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.010603395290672779
+    },
+    {
+        "content": "Has anyone read any good books lately? Looking for recommendations!",
+        "loss": 0.0016208381857722998,
+        "loss_sn": "1.6208382e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.008208336308598518
+    },
+    {
+        "content": "Lost a keyring with a small flashlight attached. If found, please let me know.",
+        "loss": 0.0016234521754086018,
+        "loss_sn": "1.6234522e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.015802862122654915
+    },
+    {
+        "content": "Lost a water bottle in the gym, it\u2019s green and has a sports team logo on it.",
+        "loss": 0.001635404652915895,
+        "loss_sn": "1.6354047e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.005436505191028118
+    },
+    {
+        "content": "Reminder: Please don\u2019t leave dishes in the sink, let\u2019s keep the kitchen tidy!",
+        "loss": 0.0016366054769605398,
+        "loss_sn": "1.6366055e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.059489887207746506
+    },
+    {
+        "content": "Does anyone have a phone charger I can borrow for an hour? Left mine at home.",
+        "loss": 0.001638635410927236,
+        "loss_sn": "1.6386354e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.01442701369524002
+    },
+    {
+        "content": "Looking for a tennis partner for the weekend. Anyone interested?",
+        "loss": 0.0016394488047808409,
+        "loss_sn": "1.6394488e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.057346899062395096
+    },
+    {
+        "content": "Who's going to the yoga class after work today? It's great for relaxing!",
+        "loss": 0.0016421128530055285,
+        "loss_sn": "1.6421129e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.015457894653081894
+    },
+    {
+        "content": "Looking for a cat sitter over the weekend. Any volunteers?",
+        "loss": 0.0016432644333690405,
+        "loss_sn": "1.6432644e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.08546479046344757
+    },
+    {
+        "content": "If you\u2019re walking to the subway after work, let's go together. Safety in numbers!",
+        "loss": 0.0016730934148654342,
+        "loss_sn": "1.6730934e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 2.679787576198578e-05
+    },
+    {
+        "content": "Anyone up for a quick walk during lunch break? It's such nice weather outside!",
+        "loss": 0.0016780433943495154,
+        "loss_sn": "1.6780434e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.04684427008032799
+    },
+    {
+        "content": "FYI, there\u2019s an outdoor movie night this Saturday at the park. Bring a blanket!",
+        "loss": 0.0016799102304503322,
+        "loss_sn": "1.6799102e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.04495690017938614
+    },
+    {
+        "content": "Has anyone tried the new sushi place around the corner yet?",
+        "loss": 0.001684002811089158,
+        "loss_sn": "1.6840028e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.007315612398087978
+    },
+    {
+        "content": "Lost a pair of reading glasses in the lounge. They have a tortoiseshell frame.",
+        "loss": 0.0016869876999408007,
+        "loss_sn": "1.6869877e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.05404268577694893
+    },
+    {
+        "content": "Lost a bracelet in the cafeteria. It\u2019s silver with small charms.",
+        "loss": 0.0016911554848775268,
+        "loss_sn": "1.6911555e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.03849237412214279
+    },
+    {
+        "content": "Can someone recommend a reliable babysitter in the area?",
+        "loss": 0.0016970665892586112,
+        "loss_sn": "1.6970666e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.0412423312664032
+    },
+    {
+        "content": "Lost a phone charger in the library. It\u2019s white and has a USB-C connector.",
+        "loss": 0.0017274587880820036,
+        "loss_sn": "1.7274588e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.006576818414032459
+    },
+    {
+        "content": "Looking for movie recommendations for kids. Anything new that's good?",
+        "loss": 0.0017305407673120499,
+        "loss_sn": "1.7305408e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": 0.004172255750745535
+    },
+    {
+        "content": "Does anyone have a desk fan I could borrow? It\u2019s really warm in my corner.",
+        "loss": 0.001732258009724319,
+        "loss_sn": "1.7322580e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.031758300960063934
+    },
+    {
+        "content": "Looking for recommendations for a good lunch spot nearby. Any favorites?",
+        "loss": 0.0017502435948699713,
+        "loss_sn": "1.7502436e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.013283378444612026
+    },
+    {
+        "content": "Does anyone have a good recipe for banana bread? Thought I\u2019d try baking this weekend.",
+        "loss": 0.0017531657358631492,
+        "loss_sn": "1.7531657e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.07310067862272263
+    },
+    {
+        "content": "Does anyone have a bike pump I could borrow? My tire\u2019s flat.",
+        "loss": 0.0017620290163904428,
+        "loss_sn": "1.7620290e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.06424573063850403
+    },
+    {
+        "content": "Does anyone have experience with pottery? Looking for tips on getting started.",
+        "loss": 0.0017729995306581259,
+        "loss_sn": "1.7729995e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.025815792381763458
+    },
+    {
+        "content": "Does anyone know a good pet sitter? Planning a trip and need someone to look after my cat.",
+        "loss": 0.0017786705866456032,
+        "loss_sn": "1.7786706e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.10387413203716278
+    },
+    {
+        "content": "Does anyone have a good recipe for a vegetarian lasagna?",
+        "loss": 0.0018108754884451628,
+        "loss_sn": "1.8108755e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.02788509614765644
+    },
+    {
+        "content": "Does anyone have recommendations for easy indoor plants to keep at the desk?",
+        "loss": 0.0018288251012563705,
+        "loss_sn": "1.8288251e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.060257211327552795
+    },
+    {
+        "content": "Does anyone play the guitar? I'm thinking about learning and could use some tips.",
+        "loss": 0.0018922466551885009,
+        "loss_sn": "1.8922467e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.09315958619117737
+    },
+    {
+        "content": "Can someone recommend a good spot for a weekend getaway that's not too far?",
+        "loss": 0.0019991255830973387,
+        "loss_sn": "1.9991256e-03",
+        "ae_class": "low value",
+        "cosine_class": "low value",
+        "content_score": -0.09537917375564575
+    }
+]

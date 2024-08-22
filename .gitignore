@@ -163,7 +163,6 @@ cython_debug/
 #.idea/
 
 #Folders
-data/
-data/enron_emails/
-data/stage_1/
-llm/cuda/
+data/stage_1/backup
+data/enron_emails/emails.csv
+llm/
