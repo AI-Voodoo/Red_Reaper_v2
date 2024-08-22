@@ -1,6 +1,6 @@
 # Red Reaper v2
 <p align="center">
-<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/rr.v2.png?raw=true" alt="Description" style="width:50%;" />
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/rr.v2.png?raw=true" alt="Description" style="width:100%;" />
 </p>
 
 ## Global Project Overview
@@ -28,7 +28,7 @@ Here's the evolution:
 
 ### Training 
 <p align="left">
-<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/training.PNG?raw=true" alt="Description" style="width:75%;" />
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/training.PNG?raw=true" alt="Description" style="width:100%;" />
 </p>
 
 *Note: Training is optional as is this repo comes with a model for inference. But, just doing inference is no fun…let’s dive in and see how this was trained.*
