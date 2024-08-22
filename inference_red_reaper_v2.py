@@ -11,7 +11,7 @@ class Classification:
     def __init__(self) -> None:
         pass
     
-    def plot_confusion_matrix(self, true_labels, predicted_labels, classes, title):
+    def plot_confusion_matrix(self, true_labels, predicted_labels, classes, title) ->None:
         # Calculate the confusion matrix
         cm = confusion_matrix(true_labels, predicted_labels, labels=classes)
         
