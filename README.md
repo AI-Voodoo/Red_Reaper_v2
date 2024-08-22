@@ -51,4 +51,13 @@ First, what is an autoencoder? For this, I will let my friends at MIT deep dive 
 
 Now that we have some background, we're going to feed the embeddings created from the training set into the autoencoder. We'll use a [network architecture](https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/autoencoder/autoencoder.py) that encodes these embeddings, learning to keep only the most salient features in a latent space, while discarding the rest. When the autoencoder decodes these features from the latent space, it evaluates how well it can reconstruct the embedding compared to the original, using a loss function. This process trains the autoencoder to identify the most important semantic features of the text that define sensitive communications.
 
+### Evaluating the Autoencoder
+<p align="left">
+<img src="https://github.com/AI-Voodoo/Red_Reaper_v2/blob/main/data/images/testing.PNG?raw=true" alt="Description" style="width:100%;" />
+</p>
+
+Now that we have a trained model—or if you're using the pre-trained model included with the repo—we can evaluate its performance. We have two options for this:
+1.	Random Sampling of Unseen Enron Data: This method allows us to compare how a cosine similarity threshold classifies the text versus how the autoencoder does. This quick evaluation provides an initial look at the model's performance, offering insights into its effectiveness.
+2.	Plotting Confusion Matrices: This approach involves testing the model against a small set of GPT-generated high-value and low-value classes. Although the test set is small, it seems to do the trick. I also chose to include shorter-length strings in the test set, as this might challenge the model more, given the nature of the training data. Additionally, I wanted to assess whether the model could be used to classify shorter messages, such as those found in Teams or Slack messages.
+
 
